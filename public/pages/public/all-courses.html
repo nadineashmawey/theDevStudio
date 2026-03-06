@@ -10,17 +10,15 @@
 <body>
 
 <!--Navigation Bar-->
-
-  
   <main class="main-content">
 
-    <!-- Hero Section -->
+
     <section class="hero-section">
       <h1 class="hero-title">Explore All Courses</h1>
       <p class="hero-subtitle">Discover <span id="course-count">6</span> expert-led courses to advance your career</p>
     </section>
 
-    <!-- Search & Filter Section -->
+   
     <section class="search-filter-section">
       <div class="search-bar-wrapper">
         <span class="search-icon">
@@ -30,7 +28,7 @@
         </span>
         <input type="text" id="searchInput" class="search-input" placeholder="Search courses..." />
       </div>
-      <button class="filter-btn" id="filterBtn">
+      <button class="filters-toggle-btn" id="filterBtn">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/>
         </svg>
@@ -38,7 +36,7 @@
       </button>
     </section>
 
-    <!-- Category Filter Buttons -->
+    
     <section class="filter-section">
       <div class="filter-row" id="categoryPills">
         <button class="filter-btn filter-btn-category active" data-category="all">All</button>
@@ -55,11 +53,7 @@
         <button class="filter-btn filter-btn-level" data-level="Advanced">Advanced</button>
       </div>
     </section>
-
-    <!-- Course Count -->
     <p class="showing-count" id="showingCount">Showing 6 courses</p>
-
-    <!-- Course Grid -->
     <section class="course-grid">
 
       <!-- Card 1-->
@@ -126,7 +120,7 @@
         </div>
       </article>
 
-      <!-- Card 3 -->
+      <!-- Card 3-->
       <article class="course-card" data-category="Data Science" data-level="Intermediate">
         <div class="card-image-wrapper">
           <img src="../../../images/all-courses-3.jpg" alt="Data Science" class="card-image" />
@@ -158,7 +152,7 @@
         </div>
       </article>
 
-      <!-- Card 4 -->
+      <!-- Card 4-->
       <article class="course-card" data-category="Design" data-level="Beginner">
         <div class="card-image-wrapper">
           <img src="../../../images/all-courses-4.jpg" alt="UI/UX Design" class="card-image" />
@@ -190,7 +184,7 @@
         </div>
       </article>
 
-      <!-- Card 5-->
+      <!-- Card 5 -->
       <article class="course-card" data-category="Mobile Development" data-level="Intermediate">
         <div class="card-image-wrapper">
           <img src="../../../images/all-courses-5.jpg" alt="Mobile Development" class="card-image" />
@@ -222,7 +216,7 @@
         </div>
       </article>
 
-      <!-- Card 6 -->
+      <!-- Card 6-->
       <article class="course-card" data-category="Machine Learning" data-level="Advanced">
         <div class="card-image-wrapper">
           <img src="../../../images/all-courses-6.jpg" alt="Machine Learning" class="card-image" />
@@ -255,11 +249,13 @@
       </article>
 
     </section>
+
     <p class="no-results hidden" id="noResults">No courses found matching your criteria.</p>
 
   </main>
 
-  <!--Footer-->>
-  <script src="../../../public/css/public.js"></script>
+ <!--Footer-->
+
+  <script src="../../../public/js/public.js"></script>
 </body>
 </html>
