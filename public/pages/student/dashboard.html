@@ -1,0 +1,198 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="../../../public/css/dashboard.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!--Navigation Bar-->
+  <main class="main-content">
+
+    <section class="welcome-section">
+      <div>
+        <h1 class="welcome-title">Welcome back, Alex Johnson! 👋</h1>
+        <p class="welcome-subtitle">Keep up the great work. You're making excellent progress!</p>
+      </div>
+    </section>
+
+    <section class="stats-grid">
+
+      <div class="stat-card">
+        <div class="stat-icon stat-icon--pink">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+          </svg>
+        </div>
+        <div class="stat-value">3</div>
+        <div class="stat-label">Enrolled Courses</div>
+        <div class="stat-change stat-change--teal">+1 this month</div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-icon stat-icon--green">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/>
+          </svg>
+        </div>
+        <div class="stat-value">65%</div>
+        <div class="stat-label">Progress</div>
+        <div class="stat-change stat-change--green">+12% this week</div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-icon stat-icon--teal">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2z"/>
+          </svg>
+        </div>
+        <div class="stat-value">#1</div>
+        <div class="stat-label">Rank</div>
+        <div class="stat-change stat-change--teal">Top 1%</div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-icon stat-icon--purple">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+          </svg>
+        </div>
+        <div class="stat-value">2,850</div>
+        <div class="stat-label">Total Points</div>
+        <div class="stat-change stat-change--green">+150 this week</div>
+      </div>
+
+    </section>
+    <div class="dashboard-grid">
+      <div class="dashboard-left">
+        <section class="section-block">
+          <div class="section-header">
+            <h2 class="section-title">My Current Courses</h2>
+            <a href="my-courses.html" class="section-link">View All →</a>
+          </div>
+
+          <!-- Card 1 -->
+          <div class="course-progress-card">
+            <img src="../../../images/all-courses-1.jpg" alt="Web Development" class="course-thumb" />
+            <div class="course-progress-info">
+              <div class="course-progress-top">
+                <div>
+                  <h3 class="course-progress-title">Complete Web Development Bootcamp</h3>
+                  <p class="course-progress-author">By Dr. Sarah Miller</p>
+                </div>
+                <span class="progress-badge">65% Complete</span>
+              </div>
+              <div class="progress-bar-wrapper">
+                <div class="progress-bar" style="width: 65%"></div>
+              </div>
+              <a href="../public/course-description.html" class="btn-continue">Continue Learning</a>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="course-progress-card">
+            <img src="../../../images/all-courses-2.jpg" alt="React Development" class="course-thumb" />
+            <div class="course-progress-info">
+              <div class="course-progress-top">
+                <div>
+                  <h3 class="course-progress-title">Advanced React Development</h3>
+                  <p class="course-progress-author">By Mike Chen</p>
+                </div>
+                <span class="progress-badge">45% Complete</span>
+              </div>
+              <div class="progress-bar-wrapper">
+                <div class="progress-bar" style="width: 45%"></div>
+              </div>
+              <a href="../public/course-description.html" class="btn-continue">Continue Learning</a>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="course-progress-card">
+            <img src="../../../images/all-courses-3.jpg" alt="Data Science" class="course-thumb" />
+            <div class="course-progress-info">
+              <div class="course-progress-top">
+                <div>
+                  <h3 class="course-progress-title">Python for Data Science</h3>
+                  <p class="course-progress-author">By Dr. Emily Watson</p>
+                </div>
+                <span class="progress-badge">85% Complete</span>
+              </div>
+              <div class="progress-bar-wrapper">
+                <div class="progress-bar" style="width: 85%"></div>
+              </div>
+              <a href="../public/course-description.html" class="btn-continue">Continue Learning</a>
+            </div>
+          </div>
+
+          <!-- Action buttons -->
+          <div class="courses-actions">
+            <a href="../public/all-courses.html" class="btn-explore">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+              </svg>
+              Explore More Courses
+            </a>
+            <a href="course-payment.html" class="btn-payment">
+              🖊️ Test Payment Page →
+            </a>
+          </div>
+        </section>
+
+        <!-- Upcoming Challenges -->
+        <section class="section-block">
+          <div class="section-header">
+            <h2 class="section-title">Upcoming Challenges</h2>
+            <a href="../public/coding-challenges.html" class="section-link">View All →</a>
+          </div>
+
+          <div class="challenges-grid">
+
+            <div class="challenge-card">
+              <div class="challenge-card-top">
+                <span class="challenge-badge challenge-badge--easy">Easy</span>
+                <span class="challenge-pts">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F0FE72" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                  50 pts
+                </span>
+              </div>
+              <h3 class="challenge-title">Two Sum Problem</h3>
+              <p class="challenge-due">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                Due in 2 days
+              </p>
+            </div>
+
+            <div class="challenge-card">
+              <div class="challenge-card-top">
+                <span class="challenge-badge challenge-badge--hard">Hard</span>
+                <span class="challenge-pts">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F0FE72" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                  300 pts
+                </span>
+              </div>
+              <h3 class="challenge-title">Binary Search Tree</h3>
+              <p class="challenge-due">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                Due in 5 days
+              </p>
+            </div>
+
+          </div>
+        </section>
+
+      </div>
+      <aside class="dashboard-right">
+        <!-- LEADERBOARD -->
+      </aside>
+
+    </div>
+  </main>
+
+  <script src="../../../public/js/dashboard.js"></script>
+</body>
+</html>
