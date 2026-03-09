@@ -1,0 +1,266 @@
+
+body {
+  margin: 0;
+  font-family: 'Inter', 'Poppins';
+  background-color: #0a0e27;
+  color: #fdf4fd;
+  overflow-y:auto;
+}
+label {
+  margin-bottom: 8px;
+  color: #cbd5e1;
+}
+
+.leaderboard-page{
+  text-align:center;
+  padding:60px 80px;
+}
+
+.ranking-badge{
+  display:inline-block;
+  padding:10px 20px;
+  border-radius:20px;
+  background:linear-gradient(135deg,#3a2d4f,#2a3b59);
+  border:1px solid #97508e;
+  color:#efed66;
+  font-weight:600;
+  margin-bottom:20px;
+}
+
+.leaderboard-title{
+  font-size:48px;
+  font-weight:700;
+  margin-bottom:10px;
+}
+
+.leaderboard-subtitle{
+  color:#94a3b8;
+  margin-bottom:50px;
+}
+
+.top-players{
+  display:flex;
+  justify-content:center;
+  align-items:flex-end;
+  gap:80px;
+  margin-bottom:30px;
+}
+
+.player-card{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+.player-avatar{
+  width:90px;
+  height:90px;
+  border-radius:20px;
+  margin-bottom:10px;
+}
+
+.rank{
+  width:45px;
+  height:45px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin-bottom:10px;
+  font-weight:700;
+}
+
+/* First place highlight */
+
+.player-card.first .player-avatar{
+  border:4px solid #ff4da6;
+}
+
+.player-card.first .rank{
+  background:#38153f;
+}
+
+/* Second */
+
+.player-card.second .player-avatar{
+  border:4px solid #6ee7ff;
+}
+
+.player-card.second .rank{
+  background:#1e3a5f;
+}
+
+/* Third */
+
+.player-card.third .player-avatar{
+  border:4px solid #effb6d;
+}
+
+.player-card.third .rank{
+  background:#3a3a2d;
+}
+
+.points{
+  color:#effb6d;
+  font-weight:600;
+}
+
+
+/* Podium */
+
+.podium-row{
+  display:flex;
+  justify-content:center;
+  gap:40px;
+}
+
+.podium{
+  width:260px;
+  height:120px;
+  border-radius:20px;
+  border:1px solid #2c324c;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+/* Trophy icon */
+
+.podium i{
+  font-size:36px;
+}
+
+/* First place (middle) */
+
+.podium.first{
+  background:linear-gradient(135deg,#4b1d3f,#2b1335);
+}
+
+.podium.first i{
+  color:#ff4da6;
+}
+
+/* Second place (left) */
+
+.podium.second{
+  background:#1a2c40;
+}
+
+.podium.second i{
+  color:#6ee7ff;
+}
+
+/* Third place (right) */
+
+.podium.third{
+  background:#2d3238;
+}
+
+.podium.third i{
+  color:#effb6d;
+}
+
+
+.full-rankings{
+ 
+  background:#1a203a;
+  border-radius:20px;
+  border:1px solid #2c324c;
+  overflow:hidden;
+   max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.full-rankings .section-title{
+  padding:25px 30px;
+  border-bottom:1px solid #2c324c;
+}
+
+.ranking-list{
+  display:flex;
+  flex-direction:column;
+  
+}
+
+.rank-row{
+  display:flex;
+  align-items:center;
+  padding:20px 30px;
+  gap:20px;
+  border-bottom:1px solid #2c324c;
+  margin:10px;
+}
+
+.rank-row:last-child{
+  border-bottom:none;
+}
+
+.rank-row:hover{
+  background:#20274a;
+}
+
+.rank-row.highlight{
+  background:rgba(255,77,166,0.1);
+  border-left:4px solid #ff4da6;
+}
+
+.rank-number{
+  width:45px;
+  height:45px;
+  border-radius:15px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:700;
+  background:#242b4a;
+}
+
+.rank-number.top{
+  background:linear-gradient(135deg,#fb3d9d,#ffb3e3);
+}
+
+.rank-avatar{
+  width:50px;
+  height:50px;
+  border-radius:15px;
+}
+
+.rank-info{
+  flex:1;
+}
+
+.rank-name{
+  font-weight:600;
+}
+
+.rank-stats{
+  font-size:14px;
+  color:#94a3b8;
+  margin-top:4px;
+}
+
+.you-tag{
+  background:#ff4da6;
+  padding:3px 10px;
+  border-radius:10px;
+  font-size:12px;
+  margin-left:10px;
+}
+
+.medal{
+  font-size:22px;
+}
+
+.medal.pink{
+  color:#ff4da6;
+}
+
+.medal.blue{
+  color:#6ee7ff;
+}
+
+.medal.yellow{
+  color:#effb6d;
+}
