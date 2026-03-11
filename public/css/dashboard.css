@@ -1,15 +1,13 @@
-
-
 :root {
-  --pink:       #FD369D;
+  --pink:       #FF40A0;
   --pink-light: #FFB7E6;
   --yellow:     #F0FE72;
-  --teal:       #5FACAB;
-  --bg:         #0a0e27;
-  --surface:    #1a203a;
+  --teal:       #60A3A6;
+  --bg:         #0A0E27;
+  --surface:    #1A203A;
   --border:     rgba(255, 255, 255, 0.08);
-  --text-white: #FFFFFF;
-  --text-muted: #8B9CC8;
+  --text-white: #FFFFFC;
+  --text-muted: #BDC2C9;
   --text-body:  #C8D0E7;
   --font:       'Inter', sans-serif;
 }
@@ -93,10 +91,10 @@ body {
   margin-bottom: 8px;
 }
 
-.stat-icon--pink   { background: rgba(253, 54, 157, 0.18); color: var(--pink); }
-.stat-icon--green  { background: rgba(52, 211, 153, 0.18);  color: #34D399; }
-.stat-icon--teal   { background: rgba(95, 172, 171, 0.18);  color: var(--teal); }
-.stat-icon--purple { background: rgba(167, 139, 250, 0.18); color: #A78BFA; }
+.stat-icon--pink   { background: rgba(255, 64, 160, 0.18);  color: var(--pink); }
+.stat-icon--green  { background: rgba(96, 163, 166, 0.18);  color: var(--teal); }
+.stat-icon--teal   { background: rgba(96, 163, 166, 0.18);  color: var(--teal); }
+.stat-icon--purple { background: rgba(255, 183, 230, 0.18); color: var(--pink-light); }
 
 .stat-value {
   font-size: 1.9rem;
@@ -127,7 +125,6 @@ body {
   justify-content: space-between;
 }
 
-
 .section-header { margin-bottom: 20px; }
 
 .section-title {
@@ -146,7 +143,6 @@ body {
 
 .section-link:hover { opacity: 0.75; }
 
-
 .course-progress-card,
 .challenge-card {
   background-color: var(--surface);
@@ -159,8 +155,8 @@ body {
 
 .course-progress-card:hover,
 .challenge-card:hover,
-.stat-card:hover  {
-  border-color: rgba(253, 54, 157, 0.6);
+.stat-card:hover {
+  border-color: rgba(255, 64, 160, 0.6);
   transform: translateY(-2px);
 }
 
@@ -223,13 +219,13 @@ body {
 }
 
 .challenge-badge       { padding: 4px 14px; }
-.challenge-badge--easy { background: rgba(95, 172, 171, 0.2);  color: var(--teal); border: 1px solid rgba(95, 172, 171, 0.3); }
-.challenge-badge--hard { background: rgba(253, 54, 157, 0.2);  color: var(--pink); border: 1px solid rgba(253, 54, 157, 0.3); }
+.challenge-badge--easy { background: rgba(96, 163, 166, 0.2);  color: var(--teal); border: 1px solid rgba(96, 163, 166, 0.3); }
+.challenge-badge--hard { background: rgba(255, 64, 160, 0.2);  color: var(--pink); border: 1px solid rgba(255, 64, 160, 0.3); }
 
 .progress-bar-wrapper {
   width: 100%;
   height: 6px;
-  background: rgba(255, 255, 255, 0.08);
+  background: var(--border);
   border-radius: 99px;
   overflow: hidden;
 }
@@ -246,7 +242,7 @@ body {
   display: inline-block;
   padding: 10px 22px;
   background: linear-gradient(to right, var(--pink), var(--pink-light));
-  color: #fff;
+  color: var(--text-white);
   border: none;
   border-radius: 8px;
   font-family: var(--font);
@@ -254,7 +250,7 @@ body {
   font-weight: 600;
   cursor: pointer;
   text-decoration: none;
-  box-shadow: 0 4px 16px rgba(253, 54, 157, 0.35);
+  box-shadow: 0 4px 16px rgba(255, 64, 160, 0.35);
   transition: opacity 0.2s ease, transform 0.15s ease;
 }
 
@@ -312,7 +308,6 @@ body {
   flex-direction: column;
   gap: 12px;
 }
-
 
 .challenge-pts {
   display: flex;
