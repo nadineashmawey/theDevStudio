@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Profile</title>
+    <style>
+        body {
+            background-color: #0A0E27;
+            display: flex;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 800px;
+        }
+
+        .arrow-icon {
+            width: 14px;
+            height: 14px;
+            color: inherit;
+        }
+
+        .back-link {
+            color: #99A1AF;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-family: 'Inter', sans-serif;
+            list-style: none;
+        }
+
+        .back-link:hover { color: #F0FE72; }
+
+        .back-link a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .edit-title {
+            color: white;
+            font-family: 'Inter', sans-serif;
+        }
+
+      
+        .avatar-card {
+            background: linear-gradient(145deg, #1b1f3a, #14182b);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .grid-avatars {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 20px;
+        }
+
+        .grid-avatars img {
+            display: block;
+            width: 100%;
+            aspect-ratio: 1;
+            object-fit: cover;
+            border-radius: 15px;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .grid-avatars img:hover {
+            border-color:  #D4537E;
+            transform: scale(1.08);
+        }
+
+        .grid-avatars img.active {
+            border-color: #D4537E;
+            transform: scale(1.05);
+        }
+
+    
+        .selected-avatar {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding-top: 20px;
+            margin-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .selected-avatar img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 12px;
+            border: 3px solid #D4537E;
+            flex-shrink: 0;
+        }
+
+        .selected-title {
+            color: white;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            margin: 0 0 4px 0;
+        }
+
+        .selected-desc {
+            color: #99A1AF;
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            margin: 0;
+        }
+        .personal-info{
+            background: linear-gradient(145deg, #1b1f3a, #14182b);
+         border-radius: 1px;
+         color: white;
+         font-family: 'inter',sans-serif;
+         gap: 10px;
+            
+        }
+        .inputs{
+            background-color: #0A0E27;
+            border: transparent ;
+            border-radius: 6px;
+            color: #99A1AF;
+        }
+        .labels{
+            color: #99A1AF;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h4 class="back-link">
+            <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"
+                stroke="currentColor" stroke-width="40" fill="currentColor">
+                <path d="M73.4 297.4C60.9 309.9 60.9 330.2 73.4 342.7L233.4 502.7C245.9 515.2 
+                266.2 515.2 278.7 502.7C291.2 490.2 291.2 469.9 278.7 457.4L173.3 352L544 
+                352C561.7 352 576 337.7 576 320C576 302.3 561.7 288 544 288L173.3 288L278.7 
+                182.6C291.2 170.1 291.2 149.8 278.7 137.3C266.2 124.8 245.9 124.8 233.4 
+                137.3L73.4 297.3z"/>
+            </svg>
+            <a href="#">Back to Profile</a>
+        </h4>
+
+        <h1 class="edit-title">Edit Profile</h1>
+
+     
+        <div class="avatar-card">
+
+            <div class="grid-avatars">
+                <img src="../../../../../images/avatars/avatar1g.png" alt="Avatar 1">
+                <img src="../../../../../images/avatars/avatar2g.png" alt="Avatar 2">
+                <img src="../../../../../images/avatars/avatar3g.png" alt="Avatar 3">
+                <img src="../../../../../images/avatars/avatar4b.png" alt="Avatar 4">
+                <img src="../../../../../images/avatars/avatar5g.png" alt="Avatar 5">
+                <img src="../../../../../images/avatars/avatar6g.png" alt="Avatar 6">
+                <img src="../../../../../images/avatars/avatar7b.png" alt="Avatar 7">
+                <img src="../../../../../images/avatars/avatar8g.png" alt="Avatar 8">
+                <img src="../../../../../images/avatars/avatar9b.png" alt="Avatar 9">
+                <img src="../../../../../images/avatars/avatar10b.png" alt="Avatar 10">
+            </div>
+
+            <div class="selected-avatar">
+                <img id="selected-img" src="../../../../../images/avatars/avatar1g.png" alt="Selected Avatar">
+                <div class="selected-info">
+                    <p class="selected-title">Selected Avatar</p>
+                    <p class="selected-desc">This will be your new profile picture</p>
+                </div>
+            </div>
+
+        </div>
+        
+    </div>
+    
+
+    <script>
+        const avatars = document.querySelectorAll('.grid-avatars img');
+        const selectedImg = document.getElementById('selected-img');
+
+        avatars.forEach(avatar => {
+            avatar.addEventListener('click', () => {
+                avatars.forEach(a => a.classList.remove('active'));
+                avatar.classList.add('active');
+                selectedImg.src = avatar.src;
+                selectedImg.alt = avatar.alt;
+            });
+        });
+
+        avatars[0].classList.add('active');
+    </script>
+</body>
+</html>
