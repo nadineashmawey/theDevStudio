@@ -1,7 +1,7 @@
  body{
      background-color:#0A0E27
  }
-    .hero{
+.hero{
      position: relative;
       min-height: calc(100vh - var(--navbar-height));
       display: flex;
@@ -12,33 +12,38 @@
 
        background-color: #0A0E27;
         margin: 0;
-        font-family: 'Inter' , sans-serif;
+      font-family: 'Inter' , sans-serif;
+     
     }
+   
     .hero-tagline{
        display: inline-flex;
        align-items: center;
        gap: 8px;
-     background: linear-gradient(135deg, rgba(80, 20, 60, 0.4) 0%, rgba(30, 40, 70, 0.4) 100%);        color: #F0FE72;
-        border: 1px;
+       background: linear-gradient(135deg, rgba(64, 26, 66) 6%, rgba(69, 120, 100, 0.4) 100%);        color: #F0FE72;
+        border: 0.5px solid #FD48A7 ;
         border-radius: 999px;
         padding: 8px 20px;
-
-
-
     }
     .hero-title1{
         text-align: center;
         color:white;
-        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-family:'Inter', sans-serif;
+        font-size: 50px;
+      margin-bottom: 10px;
         
     }
     .hero-title2 {
        text-align: center;
        background: linear-gradient(to bottom ,#FD5BB2 , #f4c3e1 ) ;
-        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-   -webkit-background-clip: text;
-    background-clip: text;
+        font-family:'Inter', sans-serif;
+        -webkit-background-clip: text;
+        background-clip: text;
         -webkit-text-fill-color: transparent;
+        font-size: 50px;
+        margin-top: 8px;
+       
+
     }
     p{
         color:#c6c2c2;
@@ -57,11 +62,30 @@
         color: white;
         box-shadow: 0 10px 20px rgb(225,71,182,0.5);
         border: 1px;
-      
+       min-width: 185px
        
     }
+  
+     .cursor {
+    display: inline-block;
+    width: 2px;
+    height: 1em;
+    background-color: transparent;
+    margin-left: 2px;
+    vertical-align: middle;
+    animation: blink 0.7s step-end infinite;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
+    .browse-text {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
     .hero-buttn2{
-         background-color: transparent;
+       background-color: transparent;
         border-radius: 10px;
         padding: 6px 20px;
         color:#5FACAB ;
@@ -83,6 +107,9 @@
         display: flex;
         align-items: center;
     }
+    .hero-buttn2:hover{
+      background-color: #314444;
+    }
     .arrow-icon{
         width: 18px;
         height: 18px;
@@ -101,7 +128,7 @@
         justify-content: center;
         color: #1A1F3A;
         padding: 50px 30px;
-        gap: 100px;
+        gap: 24px;
         margin: 0 auto;
         background-color: #0A0E27;
         border: 2px solid transparent;
@@ -114,17 +141,18 @@
 
     }
     .card-item{
-        background-color:  #1A1F3A; /* The dark navy color */
+    background-color:  #1a203a; 
   color: white;
   padding: 30px 30px ;
   border-radius: 15px;
   width: 220px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Aligns text to the left */
+  align-items: flex-start; 
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
  border: 1px solid transparent;
     }
+    
     .card-item:hover{
    
    border-color: #FD48A7;
@@ -136,7 +164,7 @@
   margin-bottom: 15px;
 }
 
-/* Specific colors for the icons */
+
 .pink { color: #ff4081; }
 .yellow { color: #ffd600; }
 .light-pink { color: #FFB1D9; }
@@ -146,6 +174,11 @@
     padding: 50px 30px;
     color: white;
 }
+.section-title{
+    color: white;
+    font-family: 'Inter' , sans-serif;
+    text-align: center;
+}
 .courses-title{
     color: white;
     font-family: 'Inter' , sans-serif;
@@ -153,6 +186,7 @@
 .courses-tagline{
      color: #99A1AF;
     font-family: 'Inter' , sans-serif;
+    text-align: center;
 }
 .courses-grid{
     display: grid;
@@ -160,9 +194,10 @@
     gap: 1.5rem;
     padding: 40px;
     margin: 0 auto 2.5rem;
+   
 }
 .courses-card{
-   background-color:#1a1d29 ;
+   background-color:#1A1F3A ;
    border-radius: 15px;
    overflow: hidden;
    color: white;
@@ -171,27 +206,26 @@
    flex-direction: column;
 }
 .courses-card:hover{
-    border: 1px solid #8C2A6B;
+    border: 1px solid #FD48A7;
 }
 .courses-image{
-  position: relative; /* Essential for placing the badge on top */
+  position: relative; 
     width: 100%;
-    height: 160px;      /* Fixed height makes all cards uniform */
+    height: 160px;      
     overflow: hidden;
 }
 .courses-image img {
-     position: relative; /* Essential for placing the badge on top */
+     position: relative;
     width: 100%;
-    height: 200px;      /* Fixed height makes all cards uniform */
+    height: 200px;      
     overflow: hidden;
 }
 .badge {
     position: absolute;
     top: 12px;
-     right: 12px;   /* ← left for top-left corner */
+     right: 12px;  
      z-index: 2;
-    background-color: #ff40a0; /* That bright pink color */
-    color: white;
+    background-color: #ff40a0; 
     padding: 4px 6px;
     border-radius: 20px;
     font-size: 0.75rem;
@@ -210,7 +244,7 @@
     margin-bottom: 0.5rem;
 }
 .card-title{
-      font-family: 'Syne', sans-serif;
+      font-family: 'Inter' , sans-serif;
       font-size: 1rem;
       font-weight: 700;
       color: white;
@@ -240,13 +274,15 @@
     .category{
         color: #5FACAB;
     }
-    .footer{
-        display: flex;
-    justify-content: space-between; /* This pushes price to left, button to right */
-    align-items: center;           /* Vertically centers them */
+    
+    .card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding-top: 1rem;
-   
-    }
+    border-top: 1px solid rgba(255,255,255,0.07);
+}
+
     .price{
         font-size: 150%;
         color:#FD369D ;
@@ -258,7 +294,7 @@
      border: 1px;
      border-radius: 6px;
      color: white;
-     padding: 6px 6px;
+     padding: 6px 12px;
     }
     .btn-details a{
         text-decoration: none;
@@ -266,22 +302,219 @@
     }
   .view-all-container{
    display: flex;
-    justify-content: center; /* Centers the button horizontally */
-    margin-top: 3rem;       /* Adds space between the grid and the button */
+    justify-content: center; 
+    margin-top: 1rem;      
     padding-bottom: 2rem;
    
   }
   .view-all {
-  background-color: transparent; /* Darker than the card background */
+  background-color: transparent; 
     color: #F0FE72;
     text-decoration: none;
     padding: 12px 24px;
     border-radius: 8px;
     font-weight: 600;
     font-size: 0.95rem;
-    border: 1px solid #F0FE72; /* Subtle border like the original */
+    border: 1px solid #F0FE72; 
     transition: all 0.3s ease;
   }
   .view-all:hover{
     background: #21262E;
   }
+  .challenges{
+        display: flex;
+  align-items: center;
+  gap: 4rem;
+  padding: 4rem 3rem;
+  background-color: #0A0E27;
+   
+  }
+  .challenge{
+    color: #F0FE72;
+    border-radius: 50px;
+    border: 1px solid #F0FE72;
+    padding: 10px 20px;
+    background-color:  #21262E;
+  
+   
+  }
+  .challenges-content{
+ flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: flex-start;
+  }
+
+  .challenges-content h1 {
+    color: white;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+}
+
+.challenges-content p {
+    color: #99A1AF;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+}
+
+.challenge-btn {
+    background-color: #EFFE67;
+    border-radius: 8px;
+    border: none;
+    padding: 8px 20px;
+    cursor: pointer;
+}
+
+
+  .challenge-btn a {
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+}
+
+  .challenges-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.challenges-card {
+  background: #1A1F3A;
+  border-radius: 16px;
+  padding: 1.5rem 1.8rem;
+  border: 1px solid transparent;
+   display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  transition: border-color 0.2s;
+  cursor: pointer;
+}
+
+.challenges-card:hover {
+   border-color: #FD48A7;
+ }
+
+.challenge-title {
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+}
+.challenge-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.points {
+   color: #F0FE72;
+   font-size: 0.78rem; 
+  }
+
+.difficulty {
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+.easy { background: rgba(0,200,100,0.15); color: #00c864; border: 1px solid #00c864; }
+.hard { background: rgba(255,60,60,0.15);  color: #ff4444; border: 1px solid #ff4444; }
+  .challenge-btn{
+    background-color: #EFFE67;
+    border-radius: 8px;
+    border: 1px solid #EFFE67 ;
+     padding: 8px 20px;
+     box-shadow: 0 10px 20px #46493C;
+  }
+  .challenge-btn a{
+    text-decoration: none;
+    color: black;
+  }
+
+ .why-DevStudio {
+  text-align: center;
+  padding: 5rem 3rem;
+  background-color: #0A0E27;
+}
+
+.learning-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+.learning-card {
+  background: #1A1F3A;
+  border-radius: 14px;
+  padding: 2rem 1.5rem;
+  text-align: left;
+  border: 1px solid transparent;
+  transition: border-color 0.2s;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.learning-card:hover {
+  border-color: #FD48A7;
+}
+.learning-icon {
+  font-size: 1.8rem;
+}
+.learning-title {
+  color: white;
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: 'Inter', sans-serif;
+   margin: 0;
+}
+.learning-desc {
+  color: #99A1AF;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  margin: 0;
+}
+.start-learning{
+   background: linear-gradient(to right, #fd48a7, #a78cc0, #5facab);
+ border-radius: 20px;
+  padding: 4rem 2rem;
+  text-align: center;
+  margin: 5rem 3rem;        /* gives the floating look */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.start-learning h1{
+   color: white;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+}
+
+.start-learning p{
+  color: rgba(255,255,255,0.85);
+    font-family: 'Inter', sans-serif;
+    font-size: 1.05rem;
+    margin-top: 1rem;
+}
+.learning-btn{
+    border: none;
+     border-radius: 999px;
+    padding: 12px 32px;
+    font-family: 'Inter' , sans-serif;
+    background-color: white;
+    font-size: 1rem;
+    margin-top: 1rem;
+
+   
+}
+
+.learning-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+}
+.learning-btn a{
+    text-decoration: none;
+   color:#FD369D;
+   font-weight: 700;
+}
