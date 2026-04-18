@@ -35,456 +35,7 @@ body {
 
 .hidden { display: none !important; }
 
-/* ========================================
-   Shared: Stat Cards
-   ======================================== */
-
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-  margin-bottom: 28px;
-}
-
-.stat-card {
-  background-color: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 26px 24px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.stat-card:hover {
-  border-color: rgba(255, 64, 160, 0.6);
-  transform: translateY(-2px);
-}
-
-.stat-icon {
-  width: 46px;
-  height: 46px;
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.1rem;
-  margin-bottom: 8px;
-}
-
-.stat-icon--pink   { background: rgba(255, 64, 160, 0.18);  color: var(--pink); }
-.stat-icon--yellow { background: rgba(240, 254, 114, 0.18); color: var(--yellow); }
-.stat-icon--green,
-.stat-icon--teal   { background: rgba(96, 163, 166, 0.18);  color: var(--teal); }
-.stat-icon--purple { background: rgba(255, 183, 230, 0.18); color: var(--pink-light); }
-
-.stat-value {
-  font-size: 1.9rem;
-  font-weight: 800;
-  color: var(--text-white);
-  line-height: 1;
-}
-
-.stat-label {
-  font-size: 0.875rem;
-  color: var(--text-muted);
-}
-
-.stat-change,
-.id-stat-change,
-.ad-stat-change {
-  font-size: 0.82rem;
-  font-weight: 500;
-  color: var(--teal);
-}
-
-.stat-change--green,
-.stat-change--teal { color: var(--teal); }
-
-/* ========================================
-   Shared: Section Headers & Titles
-   ======================================== */
-
-.section-block { margin-bottom: 36px; }
-
-.section-header,
-.challenge-card-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.section-header { margin-bottom: 20px; }
-
-.section-title {
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: var(--text-white);
-  margin-bottom: 20px;
-}
-
-/* Larger variant used in student dashboard */
-.section-title--lg { font-size: 1.3rem; }
-
-.section-link {
-  font-size: 0.875rem;
-  font-weight: 600;
-  color: var(--yellow);
-  text-decoration: none;
-  transition: opacity 0.2s ease;
-}
-
-.section-link:hover { opacity: 0.75; }
-
-/* ========================================
-   Shared: Shared Chart Card Base
-   ======================================== */
-
-.id-chart-card,
-.ad-chart-card {
-  background-color: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 28px 24px;
-}
-
-/* ========================================
-   Shared: Tooltips
-   ======================================== */
-
-.id-chart-tooltip,
-.ad-tooltip {
-  position: absolute;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 10px 14px;
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--text-white);
-  pointer-events: none;
-  white-space: nowrap;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
-  z-index: 10;
-  line-height: 1.8;
-}
-
-.id-chart-tooltip span,
-.ad-tooltip span { display: block; }
-
-/* ========================================
-   Shared: Primary & Secondary Buttons
-   ======================================== */
-
-.btn-continue,
-.id-btn-create,
-.id-btn-view {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 10px 22px;
-  background: linear-gradient(to right, var(--pink), var(--pink-light));
-  color: var(--text-white);
-  border: none;
-  border-radius: 8px;
-  font-family: var(--font);
-  font-size: 0.875rem;
-  font-weight: 600;
-  cursor: pointer;
-  text-decoration: none;
-  white-space: nowrap;
-  box-shadow: 0 4px 16px rgba(255, 64, 160, 0.35);
-  transition: opacity 0.2s ease, transform 0.15s ease;
-}
-
-.btn-continue { align-self: flex-start; }
-
-.id-btn-create {
-  padding: 12px 24px;
-  font-size: 0.95rem;
-  border-radius: 10px;
-}
-
-.btn-continue:hover,
-.id-btn-create:hover,
-.id-btn-view:hover {
-  opacity: 0.88;
-  transform: translateY(-1px);
-}
-
-.btn-explore {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 12px 28px;
-  background: transparent;
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  color: var(--text-white);
-  font-family: var(--font);
-  font-size: 0.9rem;
-  font-weight: 500;
-  text-decoration: none;
-  transition: border-color 0.2s ease, color 0.2s ease;
-}
-
-.btn-explore:hover {
-  border-color: var(--teal);
-  color: var(--teal);
-}
-
-.btn-payment {
-  font-size: 0.875rem;
-  font-weight: 500;
-  color: var(--pink);
-  text-decoration: none;
-  transition: opacity 0.2s ease;
-}
-
-.btn-payment:hover { opacity: 0.75; }
-
-/* ========================================
-   Student Dashboard
-   ======================================== */
-
-.dashboard-grid {
-  display: grid;
-  grid-template-columns: 1fr 360px;
-  gap: 28px;
-  align-items: start;
-}
-
-.dashboard-left  { min-width: 0; }
-
-.dashboard-right {
-  position: sticky;
-  top: 24px;
-  min-height: 200px;
-}
-
-.welcome-section { padding: 36px 0 32px; }
-
-.welcome-title {
-  font-size: 2rem;
-  font-weight: 800;
-  color: var(--text-white);
-  margin-bottom: 8px;
-  line-height: 1.2;
-}
-
-.welcome-subtitle {
-  font-size: 1rem;
-  color: var(--text-body);
-}
-
-/* Student stats override for margin */
-.welcome-section + .stats-grid { margin-bottom: 40px; }
-
-/* Course Progress Cards */
-.course-progress-card,
-.challenge-card {
-  background-color: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  padding: 20px;
-  display: flex;
-  transition: border-color 0.25s ease, transform 0.25s ease;
-}
-
-.course-progress-card:hover,
-.challenge-card:hover {
-  border-color: rgba(255, 64, 160, 0.6);
-  transform: translateY(-2px);
-}
-
-.course-progress-card {
-  gap: 18px;
-  align-items: flex-start;
-  margin-bottom: 16px;
-}
-
-.course-thumb {
-  width: 110px;
-  height: 80px;
-  object-fit: cover;
-  border-radius: 10px;
-  flex-shrink: 0;
-}
-
-.course-progress-info {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.course-progress-top {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 12px;
-}
-
-.course-progress-title,
-.challenge-title {
-  font-size: 1rem;
-  font-weight: 700;
-  color: var(--text-white);
-  line-height: 1.3;
-}
-
-.course-progress-title { margin-bottom: 4px; }
-
-.course-progress-author {
-  font-size: 0.825rem;
-  color: var(--text-muted);
-}
-
-.progress-badge,
-.challenge-badge {
-  font-size: 0.78rem;
-  font-weight: 600;
-  border-radius: 20px;
-}
-
-.progress-badge {
-  background: rgba(240, 254, 114, 0.15);
-  color: var(--yellow);
-  padding: 4px 12px;
-  white-space: nowrap;
-  border: 1px solid rgba(240, 254, 114, 0.3);
-}
-
-.challenge-badge       { padding: 4px 14px; }
-.challenge-badge--easy { background: rgba(96, 163, 166, 0.2);  color: var(--teal); border: 1px solid rgba(96, 163, 166, 0.3); }
-.challenge-badge--hard { background: rgba(255, 64, 160, 0.2);  color: var(--pink); border: 1px solid rgba(255, 64, 160, 0.3); }
-
-.progress-bar-wrapper {
-  width: 100%;
-  height: 6px;
-  background: var(--border);
-  border-radius: 99px;
-  overflow: hidden;
-}
-
-.progress-bar {
-  height: 100%;
-  background: linear-gradient(to right, var(--pink), var(--pink-light));
-  border-radius: 99px;
-  transition: width 0.6s ease;
-}
-
-.courses-actions {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 14px;
-  margin-top: 8px;
-}
-
-.challenges-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
-}
-
-.challenge-card {
-  flex-direction: column;
-  gap: 12px;
-}
-
-.challenge-pts {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  font-size: 0.9rem;
-  font-weight: 700;
-  color: var(--yellow);
-}
-
-.challenge-due {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 0.825rem;
-  color: var(--text-muted);
-}
-
-/* ========================================
-   Instructor Dashboard
-   ======================================== */
-
-.id-welcome-section {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 36px 0 32px;
-}
-
-.id-charts-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 28px;
-  margin-bottom: 40px;
-}
-
-.id-chart-wrapper {
-  position: relative;
-  width: 100%;
-  height: 280px;
-}
-
-.id-chart-wrapper canvas {
-  display: block;
-  width: 100% !important;
-  height: 100% !important;
-}
-
-.id-course-card {
-  background-color: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  padding: 20px 24px;
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  margin-bottom: 16px;
-  transition: border-color 0.25s ease, transform 0.25s ease;
-}
-
-.id-course-card:hover {
-  border-color: rgba(255, 64, 160, 0.6);
-  transform: translateY(-2px);
-}
-
-.id-course-card .course-thumb {
-  width: 90px;
-  height: 65px;
-  flex-shrink: 0;
-}
-
-.id-course-info {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.id-course-meta {
-  display: flex;
-  align-items: center;
-  gap: 18px;
-  font-size: 0.875rem;
-  color: var(--text-muted);
-}
-
-.id-course-meta .fa-star  { color: var(--pink); }
-.id-course-meta .fa-users { opacity: 0.7; }
-
-/* ========================================
-   Admin Dashboard
-   ======================================== */
+/* header*/
 
 .ad-header { padding: 36px 0 32px; }
 
@@ -501,11 +52,87 @@ body {
   color: var(--text-body);
 }
 
+/* stat card*/
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-bottom: 28px;
+}
+
+.stat-card {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 26px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+.stat-card:hover {
+  border-color: rgba(255, 64, 160, 0.6);
+  transform: translateY(-2px);
+}
+
 .ad-card-top {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 8px;
+}
+
+.stat-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+}
+
+.stat-icon--pink   { background: rgba(255, 64, 160, 0.18);  color: var(--pink); }
+.stat-icon--yellow { background: rgba(240, 254, 114, 0.18); color: var(--yellow); }
+.stat-icon--teal   { background: rgba(96, 163, 166, 0.18);  color: var(--teal); }
+.stat-icon--purple { background: rgba(255, 183, 230, 0.18); color: var(--pink-light); }
+
+.stat-value {
+  font-size: 1.9rem;
+  font-weight: 800;
+  color: var(--text-white);
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+.ad-stat-change {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--teal);
+}
+
+/* section title*/
+
+.section-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-white);
+  margin-bottom: 20px;
+}
+
+/* chart card*/
+
+.ad-chart-card {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 28px 24px;
 }
 
 .ad-charts-grid {
@@ -527,7 +154,26 @@ body {
   height: 100%;
 }
 
-/* Bottom Grid */
+.ad-tooltip {
+  position: absolute;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-white);
+  pointer-events: none;
+  white-space: nowrap;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+  line-height: 1.8;
+}
+
+.ad-tooltip span { display: block; }
+
+/* bottom grid*/
+
 .ad-bottom-grid {
   display: grid;
   grid-template-columns: 1fr 1.6fr;
@@ -535,7 +181,8 @@ body {
   margin-bottom: 28px;
 }
 
-/* Donut Chart */
+/* donut chart*/
+
 .ad-donut-wrapper {
   position: relative;
   display: flex;
@@ -570,13 +217,13 @@ body {
 .ad-dot--design      { background: var(--pink-light); }
 .ad-dot--mlai        { background: #8B8BF5; }
 
-/* Quick Action Icon Colors */
+/* quick actions*/
+
 .ad-icon--pink       { color: var(--pink); }
 .ad-icon--yellow     { color: var(--yellow); }
 .ad-icon--teal       { color: var(--teal); }
 .ad-icon--pink-light { color: var(--pink-light); }
 
-/* Quick Actions */
 .ad-quick-actions-card {
   display: flex;
   flex-direction: column;
@@ -610,7 +257,8 @@ body {
 
 .ad-action-icon { font-size: 1.6rem; }
 
-/* Recent Activity */
+/* recent activity */
+
 .ad-activity-item {
   display: flex;
   align-items: center;
@@ -646,18 +294,16 @@ body {
 
 .ad-activity-text strong { color: var(--text-white); }
 
-.ad-activity-highlight  { font-weight: 600; }
-.ad-highlight--teal     { color: var(--teal); }
-.ad-highlight--yellow   { color: var(--yellow); }
+.ad-activity-highlight { font-weight: 600; }
+.ad-highlight--teal    { color: var(--teal); }
+.ad-highlight--yellow  { color: var(--yellow); }
 
 .ad-activity-time {
   font-size: 0.82rem;
   color: var(--text-muted);
 }
 
-/* ========================================
-   Help Button (Admin)
-   ======================================== */
+/* help button*/
 
 .fp-help-btn {
   position: fixed;
@@ -681,28 +327,17 @@ body {
   color: var(--text-white);
 }
 
-/* ========================================
-   Responsive
-   ======================================== */
+/* responsive*/
 
 @media (max-width: 1100px) {
-  .dashboard-grid   { grid-template-columns: 1fr; }
-  .dashboard-right  { position: static; }
-  .stats-grid       { grid-template-columns: repeat(2, 1fr); }
-  .id-charts-grid   { grid-template-columns: 1fr; }
-  .ad-charts-grid   { grid-template-columns: 1fr; }
-  .ad-bottom-grid   { grid-template-columns: 1fr; }
+  .stats-grid     { grid-template-columns: repeat(2, 1fr); }
+  .ad-charts-grid { grid-template-columns: 1fr; }
+  .ad-bottom-grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 640px) {
-  .main-content         { padding: 24px 20px 60px; }
-  .welcome-title        { font-size: 1.6rem; }
-  .ad-title             { font-size: 1.8rem; }
-  .stats-grid           { grid-template-columns: 1fr; }
-  .challenges-grid      { grid-template-columns: 1fr; }
-  .course-progress-card { flex-direction: column; }
-  .course-thumb         { width: 100%; height: 160px; }
-  .id-welcome-section   { flex-direction: column; align-items: flex-start; gap: 16px; }
-  .id-course-card       { flex-wrap: wrap; }
-  .ad-actions-grid      { grid-template-columns: 1fr; }
+  .main-content    { padding: 24px 20px 60px; }
+  .ad-title        { font-size: 1.8rem; }
+  .stats-grid      { grid-template-columns: 1fr; }
+  .ad-actions-grid { grid-template-columns: 1fr; }
 }
