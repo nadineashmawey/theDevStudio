@@ -5,15 +5,17 @@
     <title>Profile</title>
     <link rel="stylesheet" href="../../../public/css/profiles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
 </head>
 
 <body>
+  
     <h1 class="page-title">My Profile</h1>
 
   <main class="profile-container">
 
     <aside class="sidebar">
-      <div class="avatar"></div>
+      <div class="avatar"><img src="../../../images/avatars/avatar10b.png"></div>
       <h2>Nadine Tamer</h2>
       <p class="email">nadinetamer@gmail.com</p>
 
@@ -31,7 +33,7 @@
         <h3 style="color:#ffb6e6">12</h3>
         <p>Badges Earned</p>
       </div>
-      <button type="submit" class="edit-btn">
+      <button type="submit" class="edit-btn" id="editProileBtn">
           Edit Profile
         </button>
     </aside>
@@ -84,17 +86,17 @@
 
       <div class="course-card">
         <span>Complete Web Development Bootcamp</span>
-        <button class="view-btn">View Certificate</button>
+        <button class="view-btn" onclick="goToCertificate()">View Certificate</button>
       </div>
 
       <div class="course-card">
         <span>Python for Data Science</span>
-        <button class="view-btn">View Certificate</button>
+        <button class="view-btn" onclick="goToCertificate()">View Certificate</button>
       </div>
 
       <div class="course-card">
         <span>UI/UX Design Masterclass</span>
-        <button class="view-btn">View Certificate</button>
+        <button class="view-btn" onclick="goToCertificate()">View Certificate</button>
       </div>
 
     </section>
@@ -142,6 +144,6 @@
 
   </div>
   </main>
-
+  <script src="../../../public/js/student/profile.js"></script>
 </body>
 </html>
