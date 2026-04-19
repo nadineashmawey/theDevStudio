@@ -1,18 +1,20 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const progressBars = document.querySelectorAll('.progress-bar');
-  progressBars.forEach(bar => {
-    const targetWidth = bar.style.width;
+
+  // Animate progress bars on load
+  const bars = document.querySelectorAll('.progress-bar');
+  bars.forEach(bar => {
+    const targetWidth = bar.dataset.width;
     bar.style.width = '0%';
     setTimeout(() => {
-      bar.style.width = targetWidth;
+      bar.style.width = targetWidth + '%';
     }, 200);
   });
 
+  // Continue button click handler
   document.querySelectorAll('.btn-continue').forEach(btn => {
-    btn.addEventListener('click', (e) => {
+    btn.addEventListener('click', e => {
       const card  = e.target.closest('.course-progress-card');
       const title = card?.querySelector('.course-progress-title')?.textContent;
-      // Navigation bar
       console.log(`Continue: ${title}`);
     });
   });
