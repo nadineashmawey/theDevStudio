@@ -1,5 +1,3 @@
-
-
 body {
     background-color: #0A0E27;
     padding: 2rem;
@@ -50,7 +48,6 @@ body {
     top: 20px;
 }
 
-
 .challenge-card {
     background: linear-gradient(145deg, #1b1f3a, #14182b);
     border: 1px solid rgba(255, 255, 255, 0.08);
@@ -73,7 +70,6 @@ body {
     margin-bottom: 0;
 }
 
-
 .badge-row {
     display: flex;
     align-items: center;
@@ -94,7 +90,6 @@ body {
 .badge-hard     { background: rgba(253, 72, 167, 0.15); color: #FD48A7; }
 .badge-category { background: rgba(45, 212, 191, 0.15); color: #5FACAB; }
 
-
 .points-badge {
     margin-left: auto;
     color: #F0FE72;
@@ -109,7 +104,6 @@ body {
     color: #99A1AF;
     font-size: 14px;
 }
-
 
 .highlight-green {
     background: rgba(74, 222, 128, 0.15);
@@ -126,7 +120,6 @@ body {
     border-radius: 4px;
     font-family: monospace;
 }
-
 
 .example-block {
     background: #0A0E27;
@@ -148,7 +141,135 @@ body {
     margin-bottom: 8px;
 }
 
-.example-block .input-line  { color: #F0FE72; font-weight: 500; font-family: monospace; font-size: 13px; margin: 4px 0; }
-.example-block .output-line { color: #2dd4bf; font-weight: 500; font-family: monospace; font-size: 13px; margin: 4px 0; }
+.example-block .input-line       { color: #F0FE72; font-weight: 500; font-family: monospace; font-size: 13px; margin: 4px 0; }
+.example-block .output-line      { color: #2dd4bf; font-weight: 500; font-family: monospace; font-size: 13px; margin: 4px 0; }
 .example-block .explanation-line { color: #99A1AF; font-weight: 500; font-family: monospace; font-size: 13px; margin: 4px 0; }
 
+.solution-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.solution-header h2 { margin: 0; }
+
+#lang-select {
+    background: #0A0E27;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    color: white;
+    padding: 6px 12px;
+    font-size: 13px;
+    cursor: pointer;
+    outline: none;
+}
+
+#code-editor {
+    width: 100%;
+    height: 160px;
+    background: #0A0E27;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 8px;
+    color: #99A1AF;
+    font-family: monospace;
+    font-size: 13px;
+    padding: 14px;
+    resize: vertical;
+    outline: none;
+    line-height: 1.6;
+    box-sizing: border-box;
+}
+
+.start-btn {
+    width: 100%;
+    margin-top: 12px;
+    padding: 12px;
+    background: #F0FE72;
+    color: #0A0E27;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+}
+
+.start-btn:hover { opacity: 0.9; }
+
+.info-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.info-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    flex-shrink: 0;
+}
+
+.info-icon.pink   { background: rgba(253, 72, 167, 0.15); color: #FD48A7; }
+.info-icon.teal   { background: rgba(45, 212, 191, 0.15); color: #2dd4bf; }
+.info-icon.yellow { background: rgba(240, 254, 114, 0.15); color: #F0FE72; }
+
+.info-value {
+    font-size: 15px;
+    font-weight: 600;
+    color: white;
+    margin: 0 0 4px 0;
+}
+
+.info-label {
+    font-size: 13px;
+    color: #99A1AF;
+    margin: 0;
+}
+
+.stats-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.stat-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #99A1AF;
+}
+
+.stat-green  { color: #4ade80; font-weight: 500; }
+.stat-yellow { color: #F0FE72; font-weight: 500; }
+
+
+@media (max-width: 768px) {
+    body { padding: 1rem; }
+    .container { width: 100%; }
+    .challenge-layout { grid-template-columns: 1fr; }
+    .challenge-sidebar { position: static; }
+    .challenge-card { padding: 16px; }
+    .points-badge { margin-left: 0; }
+    #code-editor { height: 120px; }
+}
+
+@media (max-width: 480px) {
+    .challenge-card h2 { font-size: 14px; }
+    .challenge-card p  { font-size: 13px; }
+    .badge { font-size: 11px; padding: 3px 10px; }
+    .start-btn { font-size: 14px; padding: 10px; }
+    .stat-row  { font-size: 13px; }
+    .info-value { font-size: 14px; }
+    .info-label { font-size: 12px; }
+}
