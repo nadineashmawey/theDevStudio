@@ -9,15 +9,8 @@
 <body>
     <div class="container">
         <h4 class="back-link">
-            <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"
-                stroke="currentColor" stroke-width="40" fill="currentColor">
-                <path d="M73.4 297.4C60.9 309.9 60.9 330.2 73.4 342.7L233.4 502.7C245.9 515.2 
-                266.2 515.2 278.7 502.7C291.2 490.2 291.2 469.9 278.7 457.4L173.3 352L544 
-                352C561.7 352 576 337.7 576 320C576 302.3 561.7 288 544 288L173.3 288L278.7 
-                182.6C291.2 170.1 291.2 149.8 278.7 137.3C266.2 124.8 245.9 124.8 233.4 
-                137.3L73.4 297.3z"/>
-            </svg>
-            <a href="#">Back to Profile</a>
+            <i class="fa-solid fa-arrow-left"></i>
+           <a href="javascript:history.back()">Back</a>
         </h4>
 
         <h1 class="edit-title">Edit Profile</h1>
@@ -27,20 +20,20 @@
 
             <h2>Choose your Avatar</h2>
             <div class="grid-avatars">
-                <img src="../../../../../images/avatars/avatar1g.png" alt="Avatar 1">
-                <img src="../../../../../images/avatars/avatar2g.png" alt="Avatar 2">
-                <img src="../../../../../images/avatars/avatar3g.png" alt="Avatar 3">
-                <img src="../../../../../images/avatars/avatar4b.png" alt="Avatar 4">
-                <img src="../../../../../images/avatars/avatar5g.png" alt="Avatar 5">
-                <img src="../../../../../images/avatars/avatar6g.png" alt="Avatar 6">
-                <img src="../../../../../images/avatars/avatar7b.png" alt="Avatar 7">
-                <img src="../../../../../images/avatars/avatar8g.png" alt="Avatar 8">
-                <img src="../../../../../images/avatars/avatar9b.png" alt="Avatar 9">
-                <img src="../../../../../images/avatars/avatar10b.png" alt="Avatar 10">
+                <img src="../../../images/avatars/avatar1g.png" alt="Avatar 1">
+                <img src="../../../images/avatars/avatar2g.png" alt="Avatar 2">
+                <img src="../../../images/avatars/avatar3g.png" alt="Avatar 3">
+                <img src="../../../images/avatars/avatar4b.png" alt="Avatar 4">
+                <img src="../../../images/avatars/avatar5g.png" alt="Avatar 5">
+                <img src="../../../images/avatars/avatar6g.png" alt="Avatar 6">
+                <img src="../../../images/avatars/avatar7b.png" alt="Avatar 7">
+                <img src="../../../images/avatars/avatar8g.png" alt="Avatar 8">
+                <img src="../../../images/avatars/avatar9b.png" alt="Avatar 9">
+                <img src="../../../images/avatars/avatar10b.png" alt="Avatar 10">
             </div>
 
             <div class="selected-avatar">
-                <img id="selected-img" src="../../../../../images/avatars/avatar1g.png" alt="Selected Avatar">
+                <img id="selected-img" src="../../../images/avatars/avatar1g.png" alt="Selected Avatar">
                 <div class="selected-info">
                     <p class="selected-title">Selected Avatar</p>
                     <p class="selected-desc">This will be your new profile picture</p>
@@ -83,13 +76,6 @@
         <input class="inputs" type="text" value="San Francisco, CA" />
       
         </div>
- 
-          
-
-          
-
-
-      
         
        </div>
         <div class="pass-change">
@@ -123,10 +109,6 @@
          
     </div>
     
-            
-
-
-
     <script>
         const avatars = document.querySelectorAll('.grid-avatars img');
         const selectedImg = document.getElementById('selected-img');

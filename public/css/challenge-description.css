@@ -1,5 +1,14 @@
+:root {
+  --yellow:     #F0FE72;
+  --bg:         #0A0E27;
+  --surface:    #1A203A;
+  --border:     rgba(255, 255, 255, 0.08);
+  --text-white: #FFFFFC;
+  --text-muted: #BDC2C9;
+  --font:       'Inter', sans-serif;
+}
 body {
-    background-color: #0A0E27;
+    background-color: var(--bg);
     padding: 2rem;
     font-family: 'Inter', sans-serif;
 }
@@ -14,7 +23,7 @@ body {
     display: flex;
     align-items: center;
     gap: 8px;
-    color: #99A1AF;
+    color: var(--text-muted);
     font-size: 14px;
     margin-bottom: 20px;
     cursor: pointer;
@@ -25,7 +34,7 @@ body {
     color: inherit;
 }
 
-.back-link:hover { color: #F0FE72; }
+.back-link:hover { color: var(--yellow) }
 
 .challenge-layout {
     display: grid;
@@ -49,22 +58,22 @@ body {
 }
 
 .challenge-card {
-    background: linear-gradient(145deg, #1b1f3a, #14182b);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: var(--border);
+    border: 1px solid var(--border);
     border-radius: 12px;
     padding: 24px;
-    color: white;
+    color: var(--text-white);
 }
 
 .challenge-card h2 {
     font-size: 16px;
     font-weight: 700;
-    color: white;
+    color: var(--text-white);
     margin-bottom: 16px;
 }
 
 .challenge-card p {
-    color: #99A1AF;
+    color: var(--text-muted);
     font-size: 14px;
     line-height: 1.7;
     margin-bottom: 0;
@@ -92,7 +101,7 @@ body {
 
 .points-badge {
     margin-left: auto;
-    color: #F0FE72;
+    color: var(--yellow);
     font-size: 14px;
     font-weight: 600;
     display: flex;
@@ -101,7 +110,7 @@ body {
 }
 
 .summary-text {
-    color: #99A1AF;
+    color: var(--text-muted);
     font-size: 14px;
 }
 
@@ -115,15 +124,15 @@ body {
 
 .highlight-yellow {
     background: rgba(240, 254, 114, 0.15);
-    color: #F0FE72;
+    color: var(--yellow);
     padding: 2px 8px;
     border-radius: 4px;
     font-family: monospace;
 }
 
 .example-block {
-    background: #0A0E27;
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    background: var(--bg);
+    border: 1px solid var(--border);
     border-radius: 8px;
     padding: 14px;
     margin-bottom: 12px;
@@ -136,14 +145,14 @@ body {
 }
 
 .example-number {
-    color: #99A1AF;
+    color: var(--text-muted);
     font-size: 12px;
     margin-bottom: 8px;
 }
 
-.example-block .input-line       { color: #F0FE72; font-weight: 500; font-family: monospace; font-size: 13px; margin: 4px 0; }
+.example-block .input-line       { color: var(--yellow); font-weight: 500; font-family: monospace; font-size: 13px; margin: 4px 0; }
 .example-block .output-line      { color: #2dd4bf; font-weight: 500; font-family: monospace; font-size: 13px; margin: 4px 0; }
-.example-block .explanation-line { color: #99A1AF; font-weight: 500; font-family: monospace; font-size: 13px; margin: 4px 0; }
+.example-block .explanation-line { color: var(--text-muted); font-weight: 500; font-family: monospace; font-size: 13px; margin: 4px 0; }
 
 .solution-header {
     display: flex;
@@ -155,10 +164,10 @@ body {
 .solution-header h2 { margin: 0; }
 
 #lang-select {
-    background: #0A0E27;
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: var(--bg);
+    border: 1px solid var(--border);
     border-radius: 8px;
-    color: white;
+    color: var(--text-white);
     padding: 6px 12px;
     font-size: 13px;
     cursor: pointer;
@@ -168,10 +177,10 @@ body {
 #code-editor {
     width: 100%;
     height: 160px;
-    background: #0A0E27;
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    background: var(--bg);
+    border: 1px solid var(--border);
     border-radius: 8px;
-    color: #99A1AF;
+    color: var(--text-muted);
     font-family: monospace;
     font-size: 13px;
     padding: 14px;
@@ -185,8 +194,8 @@ body {
     width: 100%;
     margin-top: 12px;
     padding: 12px;
-    background: #F0FE72;
-    color: #0A0E27;
+    background: var(--yellow);
+    color: var(--bg);
     border: none;
     border-radius: 8px;
     font-size: 15px;
@@ -227,13 +236,13 @@ body {
 .info-value {
     font-size: 15px;
     font-weight: 600;
-    color: white;
+    color: var(--text-white);
     margin: 0 0 4px 0;
 }
 
 .info-label {
     font-size: 13px;
-    color: #99A1AF;
+    color: var(--text-muted);
     margin: 0;
 }
 
@@ -247,11 +256,11 @@ body {
     display: flex;
     justify-content: space-between;
     font-size: 14px;
-    color: #99A1AF;
+    color: var(--text-muted);
 }
 
 .stat-green  { color: #4ade80; font-weight: 500; }
-.stat-yellow { color: #F0FE72; font-weight: 500; }
+.stat-yellow { color: var(--yellow); font-weight: 500; }
 
 
 @media (max-width: 768px) {
