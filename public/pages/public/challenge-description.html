@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Challenge Description</title>
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="/public/css/challenge-description.css">
+</head>
+
+<body>
+
+<div class="container">
+    <div class="back-link">
+        <i class="fa-solid fa-arrow-left"></i>
+        <a href="javascript:history.back()">Back</a>
+    </div>
+
+    <div class="challenge-layout">
+
+     
+        <div class="challenge-main">
+            <div class="challenge-card">
+                <div class="badge-row">
+                    <span id="badge-difficulty" class="badge"></span>
+                    <span id="badge-category" class="badge badge-category"></span>
+
+                    <span class="points-badge">
+                        <i class="fa-solid fa-bolt"></i>
+                        <span id="header-points"></span>
+                    </span>
+                </div>
+
+                <h2 id="challenge-title"></h2>
+                <p id="challenge-summary" class="summary-text"></p>
+            </div>
+
+          
+            <div class="challenge-card">
+                <h2>Problem Description</h2>
+                <p id="challenge-description"></p>
+                <div id="challenge-details"></div>
+            </div>
+
+            
+            <div class="challenge-card">
+                <h2>Examples</h2>
+                <div id="challenge-examples"></div>
+            </div>
+
+            
+           
+
+        </div>
+
+    </div>
+</div>
+
+<script src="/public/js/challenge-description.js"></script>
+
+</body>
+</html>

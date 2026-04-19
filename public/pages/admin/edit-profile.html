@@ -2,132 +2,9 @@
 <html>
 <head>
     <title>Edit Profile</title>
-    <style>
-        body {
-            background-color: #0A0E27;
-            display: flex;
-            justify-content: center;
-            padding: 2rem;
-        }
+     <link rel="stylesheet" href="/public/css/components.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">  
 
-        .container {
-            width: 80%;
-            max-width: 800px;
-        }
-
-        .arrow-icon {
-            width: 14px;
-            height: 14px;
-            color: inherit;
-        }
-
-        .back-link {
-            color: #99A1AF;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-family: 'Inter', sans-serif;
-            list-style: none;
-        }
-
-        .back-link:hover { color: #F0FE72; }
-
-        .back-link a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .edit-title {
-            color: white;
-            font-family: 'Inter', sans-serif;
-        }
-
-      
-        .avatar-card {
-            background: linear-gradient(145deg, #1b1f3a, #14182b);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 12px;
-            padding: 20px;
-        }
-
-        .grid-avatars {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 20px;
-        }
-
-        .grid-avatars img {
-            display: block;
-            width: 100%;
-            aspect-ratio: 1;
-            object-fit: cover;
-            border-radius: 15px;
-            border: 2px solid rgba(255, 255, 255, 0.1);
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-
-        .grid-avatars img:hover {
-            border-color:  #D4537E;
-            transform: scale(1.08);
-        }
-
-        .grid-avatars img.active {
-            border-color: #D4537E;
-            transform: scale(1.05);
-        }
-
-    
-        .selected-avatar {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            padding-top: 20px;
-            margin-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
-        }
-
-        .selected-avatar img {
-            width: 80px;
-            height: 80px;
-            object-fit: cover;
-            border-radius: 12px;
-            border: 3px solid #D4537E;
-            flex-shrink: 0;
-        }
-
-        .selected-title {
-            color: white;
-            font-family: 'Inter', sans-serif;
-            font-weight: 600;
-            margin: 0 0 4px 0;
-        }
-
-        .selected-desc {
-            color: #99A1AF;
-            font-family: 'Inter', sans-serif;
-            font-size: 14px;
-            margin: 0;
-        }
-        .personal-info{
-            background: linear-gradient(145deg, #1b1f3a, #14182b);
-         border-radius: 1px;
-         color: white;
-         font-family: 'inter',sans-serif;
-         gap: 10px;
-            
-        }
-        .inputs{
-            background-color: #0A0E27;
-            border: transparent ;
-            border-radius: 6px;
-            color: #99A1AF;
-        }
-        .labels{
-            color: #99A1AF;
-            
-        }
-    </style>
 </head>
 <body>
     <div class="container">
@@ -148,6 +25,7 @@
      
         <div class="avatar-card">
 
+            <h2>Choose your Avatar</h2>
             <div class="grid-avatars">
                 <img src="../../../../../images/avatars/avatar1g.png" alt="Avatar 1">
                 <img src="../../../../../images/avatars/avatar2g.png" alt="Avatar 2">
@@ -170,9 +48,78 @@
             </div>
 
         </div>
+
+       <div class="personal-info">
+       <h2>Profile Information</h2>
+
+      <div class="fields-row">
+        <div class="field-group">
+            <label class="labels">Full Name</label>
+            <span class="field-icon"><i class="fa-regular fa-user"></i></span>
+            <input class="inputs" type="text" value=" Jana Mohamed" />
+        </div>
+        <div class="field-group">
+            <label class="labels">Username</label>
+            <span class="field-icon"><i class="fa-regular fa-user"></i></span>
+            <input class="inputs" type="text" value="jana" />
+        </div>
+    </div>
+
+      <div class="field-group">
+        <label class="labels">Email Address</label>
+        <span class="field-icon"><i class="fa-regular fa-envelope"></i></span>
+        <input class="inputs" id="email" type="email" value="jana@gmail.com" />
+      </div>
+
+        <div class="field-group">
+        <label class="labels">Bio</label>
+        <span class="field-icon"></span>
+        <textarea class="inputs">Passionate learner exploring web development and data science. Love solving coding challenges!</textarea>
+        </div>
+
+       <div class="field-group">
+        <label class="labels">Location</label>
+        <span class="field-icon"><i class="fa-solid fa-location-dot" ></i></span>
+        <input class="inputs" type="text" value="San Francisco, CA" />
+      
+        </div>
+  
         
+       </div>
+        <div class="pass-change">
+            <h2>Change Password</h2>
+              <div class="field-group">
+               <label for="currentpass" class="labels">Current Password</label>
+               <span class="field-icon"><i class="fa-solid fa-lock"></i></span>
+               <input type="password" name="currentpass"  id ="currentpass" class="pass-input" placeholder="Enter current password"/>
+               </div>
+               <div class="field-group">
+                 <label for="newpass" class="labels">New Password</label>
+                 <span class="field-icon"><i class="fa-solid fa-lock"></i></span>
+                 <input type="password" name="newpass"  id ="newpass" class="pass-input" placeholder="Enter new password">
+
+                </div>
+              
+            </div>
+              
+         <div class="bttns">
+        
+               <button class="save-bttn" onclick="window.location='#'">Save Changes</button>
+            
+           
+           
+                <button class="cancel-bttn" onclick="window.location='#'">Cancel</button>
+         
+        </div>
+         
+        </div>
+       
+         
     </div>
     
+            
+
+
 
     <script>
         const avatars = document.querySelectorAll('.grid-avatars img');
