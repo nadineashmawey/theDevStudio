@@ -29,8 +29,9 @@
         text-align: center;
         color:white;
         font-family:'Inter', sans-serif;
-        font-size: 50px;
-      margin-bottom: 10px;
+        font-size: 60px;
+       margin-bottom: 10px;
+       line-height: 1.1;
         
     }
     .hero-title2 {
@@ -40,13 +41,14 @@
         -webkit-background-clip: text;
         background-clip: text;
         -webkit-text-fill-color: transparent;
-        font-size: 50px;
+        font-size: 60px;
         margin-top: 8px;
        
 
     }
-    p{
+    .hero p{
         color:#c6c2c2;
+        margin-bottom: 32px;
         
     }
     .buttons{
@@ -62,7 +64,7 @@
         color: white;
         box-shadow: 0 10px 20px rgb(225,71,182,0.5);
         border: 1px;
-       min-width: 185px
+        min-width: 185px
        
     }
   
@@ -87,7 +89,8 @@
     .hero-buttn2{
        background-color: transparent;
         border-radius: 10px;
-        padding: 6px 20px;
+        padding: 8px 20px;
+        min-width: 130px;
         color:#5FACAB ;
         border: 1px solid #5FACAB;
 
@@ -117,6 +120,7 @@
     }
     .btn-icon{
        color:#5FACAB ;
+    
     }
     .rocket-icon{
         width: 18px;
@@ -152,23 +156,32 @@
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
  border: 1px solid transparent;
     }
-    
+.card-number {
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
     .card-item:hover{
    
    border-color: #FD48A7;
 
     }
   .icon {
-  width: 30px;
-  height: 30px;
+  width: 45px;
+  height: 45px;
   margin-bottom: 15px;
+   font-size: 2rem;
 }
 
 
-.pink { color: #ff4081; }
+.pink { color: rgb(192, 71, 139); }
 .yellow { color: #ffd600; }
 .light-pink { color: #FFB1D9; }
-.green{color: #5FACAB;}
+.green{color: teal;}
+.purple{color:purple}
+.lightsalmon{color:lightsalmon}
 .featured-courses{
     text-align: center;
     padding: 50px 30px;
@@ -240,7 +253,7 @@
 }
 .category{
     font-size: 0.75rem;
-    color: #999;
+    color: white;
     margin-bottom: 0.5rem;
 }
 .card-title{
@@ -270,11 +283,39 @@
       align-items: center;
       justify-content: space-between;
       margin-bottom: 0.9rem;
+      flex-wrap: wrap;
+      gap: 6px;
     }
-    .category{
-        color: #5FACAB;
-    }
-    
+
+.card-rating {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: white;
+    font-size: 0.85rem;
+}
+
+.card-rating .fa-star {
+    color: #FF40A0;
+    font-size: 0.85rem;
+}
+
+.rating-count {
+    color: #777;
+}
+
+.card-students {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #777;
+    font-size: 0.85rem;
+}
+
+.card-students .fa-users {
+    color: #BDC2C9;
+    font-size: 0.85rem;
+}    
     .card-footer {
     display: flex;
     justify-content: space-between;
@@ -287,6 +328,7 @@
         font-size: 150%;
         color:#FD369D ;
         font-family: 'Inter' , sans-serif;
+        white-space: nowrap;
        
     }
     .btn-details{
@@ -517,4 +559,41 @@
     text-decoration: none;
    color:#FD369D;
    font-weight: 700;
+}
+@media (max-width: 480px) {
+    .hero-title1,
+    .hero-title2 {
+        font-size: 32px;
+    }
+
+    .hero-tagline {
+        font-size: 0.8rem;
+        padding: 6px 14px;
+    }
+
+    .card-item {
+        width: 100%;
+    }
+
+    .buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .hero-buttn1,
+    .hero-buttn2 {
+        width: 100%;
+    }
+
+    .challenges-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .learning-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
 }
