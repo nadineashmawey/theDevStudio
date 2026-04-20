@@ -1,9 +1,22 @@
 body {
   margin: 0;
   font-family: 'Inter', 'Poppins';
-  background-color: #0a0e27;
-  color: #fdf4fd;
-  overflow-y:auto;
+  background-color: var(--bg);
+  color: var(--text-white);
+  overflow-y:auto;}
+  
+:root {
+  --pink:       #FF40A0;
+  --pink-light: #FFB7E6;
+  --yellow:     #F0FE72;
+  --teal:       #60A3A6;
+  --bg:         #0A0E27;
+  --surface:    #1A203A;
+  --border:     rgba(255, 255, 255, 0.08);
+  --text-white: #FFFFFC;
+  --text-muted: #BDC2C9;
+  --text-body:  #C8D0E7;
+  --font:       'Inter', sans-serif;
 }
 
 .page-title{
@@ -34,6 +47,7 @@ body {
 .sidebar {
   width: 260px;
   background-color: #1a203a;
+  background-color: var(--surface);
   padding: 30px;
   border-radius: 20px;
   text-align: center;
@@ -41,6 +55,7 @@ body {
   position:sticky;
   top:100px;
   border:1px solid #2c324c;
+  border:1px solid var(--border);
 }
 
 .avatar {
@@ -53,6 +68,17 @@ body {
 
 .email {
   color: #94a3b8;
+  background: var(--surface);
+  border: 4px solid var(--pink);
+}
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+}
+
+.email {
+  color: var(--text-muted);
   margin-bottom: 30px;
 }
 
@@ -66,6 +92,15 @@ body {
 
 .stat-card h3 {
   color: #eeff6d;
+  background-color: var(--bg);
+  padding: 20px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  border:1px solid var(--border);
+}
+
+.stat-card h3 {
+  color: var(--yellow);
   margin: 0;
 }
 
@@ -76,6 +111,10 @@ body {
   padding: 40px;
   border-radius: 20px;
   border:1px solid #2c324c;
+  background-color: var(--surface);
+  padding: 40px;
+  border-radius: 20px;
+  border:1px solid var(--border);
 }
 
 .profile-info h1 {
@@ -101,11 +140,13 @@ input[readonly], textarea[readonly]{
   background:#0f172a;
   border:none;
   color:white;
+  color:var(--text-white);
 }
 
 input::placeholder,
 textarea::placeholder {
   color: #ffffff;       
+  color: var(--text-white);       
   font-size: 14px;    
   opacity: 1;         
 }
@@ -122,6 +163,7 @@ textarea {
   padding: 12px;
   border-radius: 10px;
   color: white;
+  color: var(--text-white);
 }
 
 textarea {
@@ -138,6 +180,8 @@ textarea {
   font-weight: 600;
   background: linear-gradient(135deg, #fb3d9d, #ffb3e3);
   color: white;
+  background: linear-gradient(135deg, var(--pink), var(--pink-light));
+  color: var(--text-white);
   transition: 0.3s;
   width:100%;
 }
@@ -151,6 +195,10 @@ textarea {
   padding:30px;
   border-radius:20px;
   border:1px solid #2c324c;
+  background:var(--surface);
+  padding:30px;
+  border-radius:20px;
+  border:1px solid var(--border);
 }
 
 .certificate-grid{
@@ -181,6 +229,18 @@ textarea {
 
 .course-card{
   background:#0f172a;
+  border:1px solid var(--border);
+}
+
+.completed-courses{
+  background:var(--surface);
+  padding:30px;
+  border-radius:20px;
+  border:1px solid var(--border);
+}
+
+.course-card{
+  background:var(--bg);
   padding:20px;
   border-radius:12px;
   display:flex;
@@ -193,6 +253,9 @@ textarea {
   border:2px solid #effb6d;
   background:transparent;
   color:#effb6d;
+  border:2px solid var(--yellow);
+  background:transparent;
+  color:var(--yellow);
   padding:8px 16px;
   border-radius:10px;
   cursor:pointer;
@@ -227,5 +290,10 @@ textarea {
 
 .certificate-card:hover{
   border-color:#ff4da6;
+  color:var(--pink);
+}
+
+.certificate-card:hover{
+  border-color:var(--pink);
   box-shadow:0 0 10px rgba(255,77,166,0.4);
 }
