@@ -104,19 +104,19 @@ if (paymentForm) {
       return;
     }
 
-    document.body.innerHTML = `
-      <div class="success-screen">
-        <div class="success-circle">
-          <div class="success-check">✓</div>
-        </div>
-        <h1>Payment Successful!</h1>
-        <p class="success-text">You're now enrolled in Advanced React & TypeScript</p>
-        <p class="redirect-text">Redirecting to dashboard...</p>
-      </div>
-    `;
+   document.body.innerHTML = `
+  <div class="success-screen">
+    <div class="success-circle" style="background:#ff6b6b; box-shadow:0 0 0 8px rgba(255, 107, 107, 0.15);">
+      <div class="success-check">✕</div>
+    </div>
+    <h1>Payment Failed</h1>
+    <p class="success-text">Something went wrong. Please check your payment details and try again.</p>
+    <p class="redirect-text">Redirecting back...</p>
+  </div>
+`;
 
     setTimeout(function () {
-      window.location.href = "dashboard.html";
+      window.location.href = "payment.html";
     }, 2000);
   });
 }

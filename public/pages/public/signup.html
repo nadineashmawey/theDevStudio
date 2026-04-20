@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EduPlatform - Create Account</title>
+
+  <link rel="stylesheet" href="../../public/css/signup.css" />
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+  <div class="page">
+    <header class="navbar">
+      <div class="logo-wrap">
+        <div class="logo-badge">🎓</div>
+        <span class="logo-text">EduPlatform</span>
+      </div>
+
+      <nav class="nav-links">
+        <a href="#">Courses</a>
+        <a href="#">Challenges</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#" class="login-link">Login</a>
+        <a href="#" class="signup-chip">Sign Up</a>
+      </div>
+    </header>
+
+    <main class="hero">
+      <section class="left-panel">
+        <div class="info-card">
+          <h1>
+            Join <br />
+            <span>EduPlatform Today</span>
+          </h1>
+
+          <p>Start your journey to becoming a skilled professional.</p>
+
+          <div class="stats">
+            <div class="stat-item">
+              <div class="stat-badge">50K+</div>
+              <span>Active Students</span>
+            </div>
+
+            <div class="stat-item">
+              <div class="stat-badge">500+</div>
+              <span>Expert Courses</span>
+            </div>
+
+            <div class="stat-item">
+              <div class="stat-badge">25K+</div>
+              <span>Certifications Issued</span>
+            </div>
+
+            <div class="stat-item">
+              <div class="stat-badge">95%</div>
+              <span>Success Rate</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="right-panel">
+        <div class="form-card">
+          <h2>Create Account</h2>
+          <p class="subtitle">Sign up to start your learning journey</p>
+
+          <div class="role-group">
+            <label>I want to join as</label>
+            <div class="role-buttons">
+              <button type="button" class="role-btn active" data-role="Student">Student</button>
+              <button type="button" class="role-btn" data-role="Instructor">Instructor</button>
+              <button type="button" class="role-btn" data-role="Admin">Admin</button>
+            </div>
+          </div>
+
+          <form id="signupForm">
+            <div class="input-group">
+              <label for="fullName">Full Name</label>
+              <div class="input-wrap">
+                <i data-lucide="user"></i>
+                <input type="text" id="fullName" placeholder="John Doe" />
+              </div>
+            </div>
+
+            <div class="input-group">
+              <label for="email">Email Address</label>
+              <div class="input-wrap">
+                <i data-lucide="mail"></i>
+                <input type="email" id="email" placeholder="you@example.com" />
+              </div>
+            </div>
+
+            <div class="input-group">
+              <label for="password">Password</label>
+              <div class="input-wrap">
+                <i data-lucide="lock"></i>
+                <input type="password" id="password" placeholder="Create a strong password" />
+                <button type="button" class="eye-btn" id="togglePassword">
+                  <i data-lucide="eye"></i>
+                </button>
+              </div>
+            </div>
+
+            <label class="checkbox-row">
+              <input type="checkbox" id="terms" />
+              <span>
+                I agree to the
+                <a href="#">Terms of Service</a>
+                and
+                <a href="#">Privacy Policy</a>
+              </span>
+            </label>
+
+            <button type="submit" class="create-btn">Create Account</button>
+
+            <p class="signin-text">
+              Already have an account?
+              <a href="#">Sign In</a>
+            </p>
+
+            <div class="divider">
+              <span>Or sign up with</span>
+            </div>
+
+            <div class="social-buttons">
+              <button type="button" class="social-btn">Google</button>
+              <button type="button" class="social-btn">GitHub</button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="../../public/js/signup.js"></script>
+</body>
+</html>
