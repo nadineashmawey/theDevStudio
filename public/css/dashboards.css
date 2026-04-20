@@ -1,0 +1,856 @@
+/* ========================================
+   CSS Variables & Reset
+   ======================================== */
+
+:root {
+  --pink:        #FF40A0;
+  --pink-light:  #FFB7E6;
+  --yellow:      #F0FE72;
+  --teal:        #60A3A6;
+  --bg:          #0A0E27;
+  --surface:     #1A203A;
+  --border:      rgba(255, 255, 255, 0.08);
+  --border-hover:rgba(255, 64, 160, 0.55);
+  --text-white:  #FFFFFC;
+  --text-muted:  #BDC2C9;
+  --text-body:   #C8D0E7;
+  --font:        'Inter', sans-serif;
+  --radius-lg:   16px;
+  --radius-md:   12px;
+  --radius-sm:   8px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text-white);
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+.hidden { display: none !important; }
+
+/* ========================================
+   Layout
+   ======================================== */
+
+.main-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 40px 40px 80px;
+}
+
+.page-grid {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 28px;
+  align-items: start;
+}
+
+.page-left  { min-width: 0; }
+
+.page-right {
+  position: sticky;
+  top: 24px;
+}
+
+/* ========================================
+   Welcome Section
+   ======================================== */
+
+/* Student dashboard */
+.welcome-section { padding: 10px 0 32px; }
+
+/* Admin dashboard */
+.ad-header { padding: 36px 0 32px; }
+
+.ad-title {
+  font-size: 2.4rem;
+}
+
+.ad-subtitle {
+  font-size: 1rem;
+  color: var(--text-body);
+}
+
+/* Instructor dashboard */
+.id-welcome-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 36px 0 32px;
+}
+
+.welcome-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--text-white);
+  margin-bottom: 8px;
+  line-height: 1.2;
+}
+
+.welcome-subtitle {
+  font-size: 0.97rem;
+  color: var(--text-body);
+}
+
+/* ========================================
+   Stat Cards
+   ======================================== */
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-bottom: 36px;
+}
+
+.stat-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 26px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+.stat-card:hover,
+.course-progress-card:hover,
+.challenge-card:hover {
+  border-color: var(--border-hover);
+  transform: translateY(-2px);
+}
+
+.ad-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.stat-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+.stat-icon--pink   { background: rgba(255, 64, 160, 0.18);  color: var(--pink); }
+.stat-icon--green  { background: rgba(96, 163, 166, 0.18);  color: var(--teal); }
+.stat-icon--yellow { background: rgba(240, 254, 114, 0.18); color: var(--yellow); }
+.stat-icon--teal   { background: rgba(96, 163, 166, 0.18);  color: var(--teal); }
+.stat-icon--purple { background: rgba(255, 183, 230, 0.18); color: var(--pink-light); }
+
+.stat-value {
+  font-size: 1.9rem;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--text-white);
+}
+
+.stat-label  { font-size: 0.875rem; color: var(--text-muted); margin-top: 2px; }
+.stat-change { font-size: 0.8rem;   font-weight: 600; color: var(--teal); }
+
+.ad-stat-change {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--teal);
+}
+
+.id-stat-change {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--teal);
+  align-self: flex-end;
+}
+
+/* ========================================
+   Section Shared
+   ======================================== */
+
+.section-block  { margin-bottom: 32px; }
+
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.section-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-white);
+  margin-bottom: 20px;
+}
+
+.section-link {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--yellow);
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+.section-link:hover { opacity: 0.75; }
+
+/* ========================================
+   Charts — Admin
+   ======================================== */
+
+.ad-chart-card {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 28px 24px;
+}
+
+.ad-charts-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  margin-bottom: 28px;
+}
+
+.ad-chart-wrapper {
+  position: relative;
+  width: 100%;
+  height: 280px;
+}
+
+.ad-chart-wrapper canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.ad-tooltip {
+  position: absolute;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-white);
+  pointer-events: none;
+  white-space: nowrap;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+  line-height: 1.8;
+}
+
+.ad-tooltip span { display: block; }
+
+/* ========================================
+   Charts — Instructor
+   ======================================== */
+
+.id-charts-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  margin-bottom: 40px;
+}
+
+.id-chart-card {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 28px 24px;
+}
+
+.id-chart-wrapper {
+  position: relative;
+  width: 100%;
+  height: 280px;
+}
+
+.id-chart-wrapper canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.id-chart-tooltip {
+  position: absolute;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-white);
+  pointer-events: none;
+  white-space: nowrap;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+  line-height: 1.8;
+}
+
+.id-chart-tooltip span { display: block; }
+
+/* ========================================
+   Donut Chart
+   ======================================== */
+
+.ad-bottom-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 28px;
+  margin-bottom: 28px;
+}
+
+.ad-donut-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.ad-legend {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 20px;
+}
+
+.ad-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.ad-legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.ad-dot--webdev      { background: var(--pink); }
+.ad-dot--datascience { background: var(--yellow); }
+.ad-dot--mobile      { background: var(--teal); }
+.ad-dot--design      { background: var(--pink-light); }
+.ad-dot--mlai        { background: #8B8BF5; }
+
+/* ========================================
+   Course Cards
+   ======================================== */
+
+/* Student dashboard */
+.course-progress-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+  margin-bottom: 14px;
+  transition: border-color 0.25s, transform 0.25s;
+}
+
+.course-progress-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.course-progress-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.course-progress-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-white);
+  margin-bottom: 4px;
+  line-height: 1.3;
+}
+
+.course-progress-author {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+.progress-badge {
+  font-size: 0.76rem;
+  font-weight: 600;
+  background: rgba(240, 254, 114, 0.13);
+  color: var(--yellow);
+  padding: 4px 12px;
+  border-radius: 20px;
+  border: 1px solid rgba(240, 254, 114, 0.28);
+  white-space: nowrap;
+}
+
+.progress-bar-wrapper {
+  width: 100%;
+  height: 6px;
+  background: var(--border);
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  background: linear-gradient(to right, var(--pink), var(--pink-light));
+  border-radius: 99px;
+  width: 0%;
+  transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Instructor dashboard */
+.id-course-card {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 14px;
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+.id-course-card:hover {
+  border-color: var(--border-hover);
+  transform: translateY(-2px);
+}
+
+.id-course-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.id-course-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-white);
+  line-height: 1.3;
+}
+
+.id-course-meta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+.id-course-meta span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Shared thumbnail */
+.course-thumb {
+  width: 110px;
+  height: 78px;
+  object-fit: cover;
+  border-radius: 10px;
+  flex-shrink: 0;
+  background: var(--surface);
+}
+
+/* ========================================
+   Buttons
+   ======================================== */
+
+.btn-continue {
+  align-self: flex-start;
+  display: inline-block;
+  padding: 9px 20px;
+  background: linear-gradient(to right, var(--pink), var(--pink-light));
+  color: #fff;
+  border-radius: var(--radius-sm);
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 4px 16px rgba(255, 64, 160, 0.3);
+  transition: opacity 0.2s, transform 0.15s;
+}
+.btn-continue:hover { opacity: 0.88; transform: translateY(-1px); }
+
+.id-btn-create,
+.id-btn-view {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(to right, var(--pink), var(--pink-light));
+  color: var(--text-white);
+  font-family: var(--font);
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.15s ease;
+}
+
+.id-btn-create {
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-size: 0.95rem;
+}
+
+.id-btn-view {
+  padding: 10px 22px;
+  border-radius: var(--radius-sm);
+  font-size: 0.875rem;
+}
+
+.id-btn-create:hover,
+.id-btn-view:hover {
+  opacity: 0.88;
+  transform: translateY(-1px);
+}
+
+/* ========================================
+   Action Buttons — Student
+   ======================================== */
+
+.courses-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-top: 6px;
+}
+
+.btn-explore {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 28px;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  color: var(--text-white);
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: border-color 0.2s, color 0.2s;
+}
+.btn-explore:hover { border-color: var(--teal); color: var(--teal); }
+
+.btn-payment {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--pink);
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+.btn-payment:hover { opacity: 0.75; }
+
+/* ========================================
+   Quick Actions — Admin
+   ======================================== */
+
+.ad-quick-actions-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.ad-actions-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.ad-action-btn {
+  background-color: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  text-decoration: none;
+  color: var(--text-white);
+  font-size: 1rem;
+  font-weight: 600;
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
+.ad-action-btn:hover {
+  border-color: rgba(255, 64, 160, 0.6);
+  transform: translateY(-2px);
+}
+
+.ad-action-icon { font-size: 1.6rem; }
+
+.ad-icon--pink       { color: var(--pink); }
+.ad-icon--yellow     { color: var(--yellow); }
+.ad-icon--teal       { color: var(--teal); }
+.ad-icon--pink-light { color: var(--pink-light); }
+
+/* ========================================
+   Challenges — Student
+   ======================================== */
+
+.challenges-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.challenge-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: border-color 0.25s, transform 0.25s;
+}
+
+.challenge-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.challenge-badge {
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 4px 14px;
+  border-radius: 20px;
+}
+.challenge-badge--easy { background: rgba(96,163,166,0.2);  color: var(--teal); border: 1px solid rgba(96,163,166,0.3); }
+.challenge-badge--hard { background: rgba(255,64,160,0.2);  color: var(--pink); border: 1px solid rgba(255,64,160,0.3); }
+
+.challenge-pts {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--yellow);
+}
+
+.challenge-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-white);
+}
+
+.challenge-due {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+/* ========================================
+   Recent Activity — Admin
+   ======================================== */
+
+.ad-activity-card { margin-top: 0; }
+
+.ad-activity-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background-color: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 18px 20px;
+  margin-bottom: 14px;
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
+.ad-activity-item:last-child { margin-bottom: 0; }
+.ad-activity-item:hover {
+  border-color: rgba(255, 64, 160, 0.6);
+  transform: translateY(-2px);
+}
+
+.ad-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  background-color: var(--surface);
+}
+
+.ad-activity-text p {
+  font-size: 0.95rem;
+  color: var(--text-body);
+  margin-bottom: 4px;
+}
+.ad-activity-text strong { color: var(--text-white); }
+
+.ad-activity-highlight { font-weight: 600; }
+.ad-highlight--teal    { color: var(--teal); }
+.ad-highlight--yellow  { color: var(--yellow); }
+
+.ad-activity-time {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+/* ========================================
+   Leaderboard — Student
+   ======================================== */
+
+.leaderboard-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+}
+
+.leaderboard-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.leaderboard-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-white);
+}
+
+.leaderboard-link {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--yellow);
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+.leaderboard-link:hover { opacity: 0.7; }
+
+.leaderboard-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.lb-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: var(--radius-md);
+  border: 1px solid transparent;
+  transition: border-color 0.2s;
+}
+.lb-item:hover { border-color: var(--border); }
+
+.lb-item--first {
+  background: linear-gradient(135deg, rgba(255,64,160,0.15), rgba(96,163,166,0.08));
+  border-color: rgba(255,64,160,0.25) !important;
+}
+
+.lb-rank {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  font-weight: 800;
+  flex-shrink: 0;
+  background: var(--surface);
+  color: var(--text-muted);
+}
+.lb-rank--1 { background: var(--pink); color: #fff; }
+
+.lb-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.lb-info  { flex: 1; min-width: 0; }
+
+.lb-name {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-white);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.lb-pts { font-size: 0.78rem; color: var(--text-muted); }
+
+.lb-trophy         { color: var(--pink);  font-size: 0.95rem; }
+.lb-trophy--silver { color: var(--teal); }
+.lb-trophy--bronze { color: #c8a96e; }
+
+/* ========================================
+   Help Button — Admin
+   ======================================== */
+
+.fp-help-btn {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  font-family: var(--font);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+}
+.fp-help-btn:hover {
+  border-color: var(--pink);
+  color: var(--text-white);
+}
+
+/* ========================================
+   Responsive
+   ======================================== */
+
+@media (max-width: 1100px) {
+  .page-grid      { grid-template-columns: 1fr; }
+  .page-right     { position: static; }
+  .stats-grid     { grid-template-columns: repeat(2, 1fr); }
+  .ad-charts-grid { grid-template-columns: 1fr; }
+  .ad-bottom-grid { grid-template-columns: 1fr; }
+  .id-charts-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 640px) {
+  .main-content         { padding: 24px 20px 60px; }
+  .ad-title             { font-size: 1.8rem; }
+  .welcome-title        { font-size: 1.6rem; }
+  .stats-grid           { grid-template-columns: 1fr; }
+  .ad-actions-grid      { grid-template-columns: 1fr; }
+  .challenges-grid      { grid-template-columns: 1fr; }
+  .course-progress-card { flex-direction: column; }
+  .id-welcome-section   { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .id-course-card       { flex-wrap: wrap; }
+  .course-thumb         { width: 100%; height: 140px; }
+}

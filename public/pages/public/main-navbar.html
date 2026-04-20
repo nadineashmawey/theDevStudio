@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../../css/navbar-css.css">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <title>Navbar</title>
+</head>
+
+<body>
+
+  <div class="top-navbar">
+
+  <div class="nav-left">
+    <div class="nav-left" onclick="goHome()" style="cursor:pointer;">
+  <div class="logo-icon">
+    <i class="fa-solid fa-graduation-cap"></i>
+  </div>
+  <span class="logo-text">EduPlatform</span>
+</div>
+
+<div class="nav-center">
+  <a href="#" onclick="goCourses()">Courses</a>
+  <a href="#" onclick="goChallenges()">Challenges</a>
+  <a href="#" onclick="goDashboard()">Dashboard</a>
+</div>
+
+<div class="nav-right">
+
+  <div class="profile-pill" onclick="goProfile()">
+    <div class="avatar">
+      <i class="fa-solid fa-user"></i>
+    </div>
+    <span>Dr. Sarah Miller</span>
+  </div>
+
+  <div class="logout-icon" onclick="logout()">
+    <i class="fa-solid fa-arrow-right-from-bracket"></i>
+  </div>
+
+</div>
+
+</div>
+<script src="../../../js/main-navbar.js"></script>
+</body>
+</html>
