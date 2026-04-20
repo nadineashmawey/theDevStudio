@@ -6,7 +6,7 @@ function getRole() {
 
 // ===== COURSES =====
 function goCourses() {
-  window.location.href = "../pages/public/all-courses.html";
+  window.location.href = "../../../public/pages/public/all-courses.html";
 }
 
 // ===== CHALLENGES =====

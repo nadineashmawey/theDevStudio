@@ -11,7 +11,7 @@ function goSignup() {
 
 function goCourses() {
   console.log("Courses clicked");
-  window.location.href = "../pages/public/all-courses.html";
+  window.location.href = "/public/pages/public/all-courses.html";
 }
 
 function goChallenges() {
