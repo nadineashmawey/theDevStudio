@@ -1,170 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
+   <head >
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../../css/course-description-css.css">
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title> Course Description </title>
-<style>
-    body{
-        background-color: #0a0e27;
-        color:white;
-        font-family: sans-serif,Arial;
-        margin:0;
-    }
-    .left-col{
-        max-width: 650px;
-        padding: 24px 48px;
-    }
-    .badges{
-        display: flex;
-        margin-bottom:20px ;
-        gap:10px
-    }
-    .badge{
-
-        font-size:13px ;
-        padding:5px 14px ;
-        border: 1.5px,solid;
-        border-radius:20px;
-        background: transparent;
-    }
-    .badge-frosted-blue{
-        color: #baeeff;
-        border-color: #627d86;
-        background: #627d86;
-    }
-    .badge-Dragonfruit{
-        color:#fd369d;
-        border-color:#aa1d66;
-     background: #aa1d66;
-    }
-    .course-title{
-        font-size: 38px;
-        font-weight:800 ;
-        margin-bottom: 16px;
-    }
-    .course-decription{
-        font-size:16px ;
-        margin-bottom:24px ;
-        line-height: 1.7;
-    }
-    .meta-row{
-        display: flex;
-        align-items:center ;
-        gap:28px;
-        margin-bottom: 28px;
-
-    }
-    .rating{
-        display:flex;
-        align-items:center ;
-        gap:6px;
-        font-weight:600;
-        color:white;
-
-    }
-    .rating ★ {
-  color: #f5a623;  
-    }
-    .rating-count{
-        color:#8b92a9;
-        font-weight: 400;
-    }
-    .meta-item{
-        display:flex;
-        align-items:center;
-        gap:6px;
-        color:#8b92a9;
-        font-size:14px;
-
-
-    }
-    .Instructor{
-        display:flex;
-        align-items: center;
-        gap:12px;
-        margin-bottom: 36px;
-    }
-    .avatar{
-        display:flex;
-        align-items:center ;
-        justify-content: center;
-        height:44px ;
-        width:44px;
-        border-radius:50% ;
-        background-color:#c97b4b ;
-        font-size: 22px;
-    }
-    .title{
-        font-size:12px ;
-        color:#8b92a9;
-        margin-bottom:2px ;
-    }
-    .Instructor-Name{
-        font-weight: 700;
-        font-size: 16px;
-
-    }
-    .preview-image{
-        width:100%;
-        height: 100%;
-        border-radius: 12px;
-        margin-bottom: 32px;
-        object-fit: cover;
-    }
-    .horizontal-strip{
-        border: none;
-        border-top: 1px solid #8b92a9;
-        margin-bottom: 32px;
-    
-    }
-    .learn-box{
-       border-radius:20px ;
-       background-color:#1d2354 ;
-       border: 1px solid rgba(255,255,255,0.07);
-       margin-bottom:40px ;
-       padding: 28px 32px;
-
-    }
-    .learn-title{
-        font-weight: 700;
-        font-size: 22px;
-        margin-bottom: 20px;
-        margin-top: 0px;
-
-    }
-    .learn-grid{
-        display:grid;
-        grid-template-columns: 1fr 1fr;
-        gap:16px;
-    }
-    .learn-item{
-        color:#8b92a9;
-        font-size: 14px;
-        line-height: 1.5;
-        display:flex;
-        align-items: flex-start;
-        gap: 10px;
-    }
-    .chack{
-        color: #00c9a7;
-        font-size: 16px; 
-    }
-    .course-c-title{
-        margin:10px;
-        font-weight: 700;
-        font-size:20px;
-
-    }
-    .lessons{
-        font-size: 14px;
-        text-align: right;
-    }
-
-</style>
    </head>
    <body>
+      <div class="page-wrapper">   
 <div class="left-col">
+
     <div class="badges">
         <span class="badge badge-frosted-blue">Web Development</span>
         <span class="badge badge-Dragonfruit">Beginner</span>
@@ -174,14 +21,14 @@
         Learn HTML, CSS, JavaScript, React, Node.js, and more in this 
         comperhensive bootcamp.</p>
 <div class="meta-row">
-    <span class="rating">⭐ 4.8 
+    <span class="rating"><i class="fa-solid fa-star" style="color: rgb(255, 212, 59);"></i> 4.8 
     <span class="rating-count">(12,453 students)</span>
     </span>
-    <span class="meta-item"> 🕐 40 hours</span>
-    <span class="meta-item">👥 12,453 enrolled</span>
+    <span class="meta-item"> <i class="fa-regular fa-clock" style="color: rgb(139, 146, 169);"></i> 40 hours</span>
+    <span class="meta-item"><i class="fa-solid fa-people-group" style="color: rgb(139, 146, 169);"></i> 12,453 enrolled</span>
 </div>
 <div class="Instructor">
-    <div class="avatar">👩</div>
+    <div class="avatar"><img src="../../../images/avatars/avatar6g.png" alt="Instructor"></div>
 
     <div>
     <div class="title">Instrutor</div>
@@ -214,9 +61,122 @@
 </div>
 <h3 class="learn-title">Course Curriculum</h3>
 <div class="learn-box">
+    <div class="learn-box-line1">
     <span class="course-c-title">Getting Started</span> 
-    <span class="lessons">3 lessons</span>
+    <span class="lessons">3 lessons</span></div>
+    <div class="learn-list">
+        
+        <div class="learn-lesson"> 
+            <div class="play-button">▷</div>
+            Introduction to Web Development</div>
+       
+        <div class="learn-lesson"> 
+            <div class="play-button">▷</div>
+            Setting up your environment</div>
+        
+        <div class="learn-lesson"> 
+            <div class="play-button">▷</div>
+            HTML Basics</div>
+    </div>
+
 </div>
+<div class="learn-box">
+    <div class="learn-box-line1">
+    <span class="course-c-title">Styling with CSS</span> 
+    <span class="lessons">3 lessons</span></div>
+    <div class="learn-list">
+        
+        <div class="learn-lesson"> 
+            <div class="play-button">▷</div>
+            CSS Fundementals </div>
+       
+        <div class="learn-lesson"> 
+            <div class="play-button">▷</div>
+            Flexbox & Grid </div>
+        
+        <div class="learn-lesson"> 
+            <div class="play-button">▷</div>
+            Responsive Design</div>
+    </div>
+    
 </div>
+    
+    <div class="learn-box">
+    <div class="learn-box-line1">
+    <span class="course-c-title">JavaScript Programming</span> 
+    <span class="lessons">3 lessons</span></div>
+    <div class="learn-list">
+        
+        <div class="learn-lesson"> 
+            <div class="play-button">▷</div>
+            JavaScript Basics
+</div>
+       
+        <div class="learn-lesson"> 
+            <div class="play-button">▷</div>
+           DOM Manipulation</div>
+        
+        <div class="learn-lesson"> 
+            <div class="play-button">▷</div>
+            HTML Basics</div>
+    </div>
+
+</div>
+
+<h3 class="learn-title">Student Reviews</h3>
+<div class="learn-box">
+  <div class="learn-box-line1">
+    <div class="Instructor" style="margin-bottom:0">
+    <div class="avatar"><img src="../../../images/avatars/avatar7b.png" alt="Student"></div>
+      <div>
+        <div class="Instructor-Name">John Doe</div>
+        <div class="title">2026-02-15</div>
+      </div>
+    </div>
+    <div><i class="fa-solid fa-star" style="color: rgb(255, 212, 59);"></i> 5</div>
+  </div>
+  <p class="course-decription" style="margin-bottom:0">
+    Amazing course! Very detailed and easy to follow.
+  </p>
+</div>
+
+</div>
+    <div class="sidebar">
+      <div class="pricing-card">
+        <div class="pricing-top">
+          <div class="price">$49.99</div>
+          <div class="price-note">One-time payment • Full lifetime access</div>
+          <button class="btn-enroll">Sign Up to Enroll</button>
+        </div>
+        <hr class="pricing-divider">
+        <div class="pricing-features">
+          <div class="feature-item">
+           <div class="feature-icon icon-clock"><i class="fa-regular fa-clock"></i></div>
+            <div>
+              <div class="feature-title">40 hours</div>
+              <div class="feature-sub">Total duration</div>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon icon-level"><i class="fa-solid fa-signal"></i></div>
+            <div>
+              <div class="feature-title">Beginner</div>
+              <div class="feature-sub">Skill level</div>
+            </div>
+          </div>
+          <div class="feature-item">
+           <div class="feature-icon icon-book"><i class="fa-solid fa-book-open"></i></div>
+            <div>
+              <div class="feature-title">3 Sections</div>
+              <div class="feature-sub">Course modules</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+</div>
+
    </body>
 </html>
