@@ -355,7 +355,7 @@ document.addEventListener('DOMContentLoaded', () => {
     drawRevenueGrowthChart();
   });
 
-  // =====================
+ // =====================
   // Instructor Dashboard Charts
   // =====================
   const enrollCanvas  = document.getElementById('enrollmentsChart');
@@ -363,35 +363,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (enrollCanvas && revenueCanvas) {
 
-    // Read colors from CSS variables so they stay in sync with the stylesheet
-    const style     = getComputedStyle(document.documentElement);
-    const PINK      = style.getPropertyValue('--pink').trim();
-    const PINK_LIGHT = style.getPropertyValue('--pink-light').trim();
-    const YELLOW    = style.getPropertyValue('--yellow').trim();
-    const SURFACE   = style.getPropertyValue('--surface').trim();
-    const MUTED     = style.getPropertyValue('--text-muted').trim();
-
     const months      = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'];
     const enrollData  = [120, 175, 245, 220, 265, 320];
     const revenueData = [4200, 7200, 9500, 8800, 11200, 13800];
-
-    function setupCanvas(canvas) {
-      const wrapper  = canvas.parentElement;
-      canvas.width   = wrapper.offsetWidth;
-      canvas.height  = wrapper.offsetHeight;
-      return canvas.getContext('2d');
-    }
-
-    function showTooltip(tooltip, x, y, month, value, valueColor) {
-      tooltip.innerHTML = `${month}<span style="color:${valueColor}">${value}</span>`;
-      tooltip.classList.remove('hidden');
-      tooltip.style.left = (x + 14) + 'px';
-      tooltip.style.top  = (y - 10) + 'px';
-    }
-
-    function hideTooltip(tooltip) {
-      tooltip.classList.add('hidden');
-    }
 
     // ---- Line Chart: Student Enrollments ----
     function drawLineChart() {
@@ -411,7 +385,6 @@ document.addEventListener('DOMContentLoaded', () => {
       function draw(hoverIdx = -1) {
         ctx.clearRect(0, 0, W, H);
 
-        // Gridlines and Y labels
         const yTicks = [0, 80, 160, 240, 320];
         ctx.font      = '11px Inter, sans-serif';
         ctx.fillStyle = MUTED;
@@ -427,11 +400,9 @@ document.addEventListener('DOMContentLoaded', () => {
           ctx.fillText(t, PAD.left - 6, y + 4);
         });
 
-        // X labels
         ctx.textAlign = 'center';
         months.forEach((m, i) => ctx.fillText(m, xPos(i), H - PAD.bottom + 18));
 
-        // Gradient fill under line
         const grad = ctx.createLinearGradient(0, PAD.top, 0, H - PAD.bottom);
         grad.addColorStop(0, 'rgba(255,64,160,0.25)');
         grad.addColorStop(1, 'rgba(255,64,160,0)');
@@ -444,7 +415,6 @@ document.addEventListener('DOMContentLoaded', () => {
         ctx.fillStyle = grad;
         ctx.fill();
 
-        // Line
         ctx.beginPath();
         ctx.strokeStyle = PINK;
         ctx.lineWidth   = 2.5;
@@ -453,7 +423,6 @@ document.addEventListener('DOMContentLoaded', () => {
         enrollData.forEach((v, i) => { if (i > 0) ctx.lineTo(xPos(i), yPos(v)); });
         ctx.stroke();
 
-        // Dots
         enrollData.forEach((v, i) => {
           const isHover = i === hoverIdx;
           ctx.beginPath();
@@ -465,7 +434,6 @@ document.addEventListener('DOMContentLoaded', () => {
           ctx.stroke();
         });
 
-        // Dashed vertical line on hover
         if (hoverIdx >= 0) {
           ctx.beginPath();
           ctx.strokeStyle = 'rgba(255,255,255,0.15)';
@@ -482,7 +450,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
       canvas.addEventListener('mousemove', (e) => {
         const rect   = canvas.getBoundingClientRect();
-        const scaleX = canvas.width / rect.width;
+        const scaleX = canvas.width  / rect.width;
+        const scaleY = canvas.height / rect.height;  // FIX: named variable, used consistently
         const mouseX = (e.clientX - rect.left) * scaleX;
 
         let closest = -1, minDist = 40;
@@ -493,7 +462,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         draw(closest);
         if (closest >= 0) {
-          showTooltip(tooltip, xPos(closest) / scaleX, yPos(enrollData[closest]) / (canvas.height / rect.height),
+          showTooltip(tooltip, xPos(closest) / scaleX, yPos(enrollData[closest]) / scaleY,
             months[closest], `students : ${enrollData[closest]}`, PINK);
         } else {
           hideTooltip(tooltip);
@@ -506,7 +475,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // ---- Bar Chart: Monthly Revenue ----
     function drawBarChart() {
       const canvas  = revenueCanvas;
-      const tooltip = document.getElementById('revenueTooltip');
+      const tooltip = document.getElementById('instructorRevenueTooltip'); // FIX: unique ID
       const ctx     = setupCanvas(canvas);
       const W = canvas.width;
       const H = canvas.height;
@@ -523,9 +492,8 @@ document.addEventListener('DOMContentLoaded', () => {
       function draw(hoverIdx = -1) {
         ctx.clearRect(0, 0, W, H);
 
-        // Gridlines and Y labels
         ctx.font      = '11px Inter, sans-serif';
-        ctx.fillStyle = YELLOW;
+        ctx.fillStyle = MUTED; // FIX: was YELLOW, now correctly MUTED
         ctx.textAlign = 'right';
         yTicks.forEach(t => {
           const y = yPos(t);
@@ -538,11 +506,9 @@ document.addEventListener('DOMContentLoaded', () => {
           ctx.fillText(t.toLocaleString(), PAD.left - 6, y + 4);
         });
 
-        // X labels
         ctx.textAlign = 'center';
         months.forEach((m, i) => ctx.fillText(m, xCenter(i), H - PAD.bottom + 18));
 
-        // Bars with rounded tops
         revenueData.forEach((v, i) => {
           const x    = xCenter(i) - barW / 2;
           const y    = yPos(v);
@@ -570,7 +536,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
       canvas.addEventListener('mousemove', (e) => {
         const rect   = canvas.getBoundingClientRect();
-        const scaleX = canvas.width / rect.width;
+        const scaleX = canvas.width  / rect.width;
+        const scaleY = canvas.height / rect.height;
         const mouseX = (e.clientX - rect.left) * scaleX;
 
         let closest = -1, minDist = (chartW / months.length) / 2;
@@ -581,7 +548,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         draw(closest);
         if (closest >= 0) {
-          showTooltip(tooltip, xCenter(closest) / scaleX, yPos(revenueData[closest]) / (canvas.height / rect.height),
+          showTooltip(tooltip, xCenter(closest) / scaleX, yPos(revenueData[closest]) / scaleY,
             months[closest], `revenue : ${revenueData[closest].toLocaleString()}`, YELLOW);
         } else {
           hideTooltip(tooltip);
