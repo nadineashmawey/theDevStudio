@@ -83,7 +83,7 @@ body { background: var(--bg-deep); color: white; font-family: sans-serif; }
   align-items: center;
   gap: 8px;
   background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(240, 254, 114, 0.12);
+  border: 1px solid rgba(240, 254, 114, 0.4);
   color: var(--yellow);
   font-family: var(--font);
   font-size: 15px;
@@ -94,34 +94,71 @@ body { background: var(--bg-deep); color: white; font-family: sans-serif; }
   transition: all 0.2s ease;
 }
 
+.stat-card .icon {
+  font-size: 28px;
+}
+
+.icon-pink  { color: var(--pink); }
+.icon-yellow{ color: var(--yellow); }
+.icon-teal  { color: var(--teal); }
 
 .btn-test-skills i {
   font-size: 15px;
   color: var(--yellow);
 }
 
-.filter-btn {
-  padding: 9px 18px;
-  border-radius: 50px;
-  font-family: var(--font);
-  font-size: 0.875rem;
-  font-weight: 500;
-  cursor: pointer;
+.filters {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 36px;
+}
+
+.filter-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.filter-row > span {
+  font-size: 14px;
+  color: var(--text-muted);
+  min-width: 70px;
+}
+
+.filter-btns {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.filter-btns button {
+  background: transparent;
   border: 1px solid var(--border);
-  background-color: var(--surface);
   color: var(--text-body);
-  transition: border-color 0.2s ease, color 0.2s ease;
+  font-family: var(--font);
+  font-size: 14px;
+  font-weight: 500;
+  padding: 8px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.2s;
 }
 
-.filter-btn-category.active {
-  background: linear-gradient(to right, var(--pink), var(--pink-light));
-  border-color: transparent;
+.filter-btns button:hover {
+  border-color: rgba(255, 255, 255, 0.2);
   color: var(--text-white);
-  box-shadow: 0 4px 18px rgba(255, 64, 160, 0.45);
 }
 
-.filter-btn-level.active {
-  background: var(--teal);
-  border-color: var(--teal);
+.filter-btns button.active {
+  background: var(--pink);
+  border-color: var(--pink);
   color: var(--text-white);
+}
+
+@media (max-width: 900px) {
+  .stats-container,
+  .challenges-grid { grid-template-columns: 1fr; }
+  .hero h1 { font-size: 36px; }
+  .challenges-section { padding: 0 20px 40px; }
 }
