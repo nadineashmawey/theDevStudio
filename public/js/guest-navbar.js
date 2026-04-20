@@ -18,3 +18,6 @@ function goChallenges() {
   console.log("Challenges clicked");
  window.location.href = "../pages/public/coding-challenges.html";
 }
+function goHome() {
+  window.location.href = "/index.html";
+}
