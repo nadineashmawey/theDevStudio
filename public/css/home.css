@@ -1,152 +1,182 @@
- body{
-     background-color:#0A0E27
- }
+:root {
+  --pink:       #FF40A0;
+  --pink-light: #FFB7E6;
+  --yellow:     #F0FE72;
+  --teal:       #60A3A6;
+  --bg:         #0A0E27;
+  --surface:    #1A203A;
+  --border:     rgba(255, 255, 255, 0.08);
+  --text-white: #FFFFFC;
+  --text-muted: #BDC2C9;
+  --text-body:  #C8D0E7;
+  --font:       'Inter', sans-serif;
+}
+body{
+   background-color:var(--bg)
+}
 .hero{
-     position: relative;
-      min-height: calc(100vh - var(--navbar-height));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 4rem 2rem 6rem;
-
-       background-color: #0A0E27;
-        margin: 0;
-      font-family: 'Inter' , sans-serif;
-     
-    }
+  position: relative;
+  min-height: calc(100vh - var(--navbar-height));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 4rem 2rem 6rem;
+  background-color: var(--bg);
+  margin: 0;
+  font-family: 'Inter' , sans-serif;     
+}
    
-    .hero-tagline{
-       display: inline-flex;
-       align-items: center;
-       gap: 8px;
-       background: linear-gradient(135deg, rgba(64, 26, 66) 6%, rgba(69, 120, 100, 0.4) 100%);        color: #F0FE72;
-        border: 0.5px solid #FD48A7 ;
-        border-radius: 999px;
-        padding: 8px 20px;
-    }
-    .hero-title1{
-        text-align: center;
-        color:white;
-        font-family:'Inter', sans-serif;
-        font-size: 60px;
-       margin-bottom: 10px;
-       line-height: 1.1;
+.hero-tagline{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, rgba(64, 26, 66) 6%, rgba(69, 120, 100, 0.4) 100%);        color: #F0FE72;
+  border: 0.5px solid var(--pink) ;
+  border-radius: 999px;
+  padding: 8px 20px;
+}
+    
+.hero-title1{
+  text-align: center;
+  color:var(--text-white);
+  font-family:'Inter', sans-serif;
+  font-size: 60px;
+  margin-bottom: 10px;
+  line-height: 1.1;
         
-    }
-    .hero-title2 {
-       text-align: center;
-       background: linear-gradient(to bottom ,#FD5BB2 , #f4c3e1 ) ;
-        font-family:'Inter', sans-serif;
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-        font-size: 60px;
-        margin-top: 8px;
+}
+    
+.hero-title2 {
+ text-align: center;
+ background: linear-gradient(to bottom ,var(--pink) , #f4c3e1 ) ;
+ font-family:'Inter', sans-serif;
+ -webkit-background-clip: text;
+ background-clip: text;
+ -webkit-text-fill-color: transparent;
+ font-size: 60px;
+ margin-top: 8px;
        
 
-    }
-    .hero p{
-        color:#c6c2c2;
-        margin-bottom: 32px;
+}
+    
+.hero p{
+  color:var(--text-muted);
+  margin-bottom: 32px;
         
-    }
-    .buttons{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 20px;
-    }
-    .hero-buttn1{
-        background :linear-gradient(to bottom, #FD48A7, #FEABDF);
-        border-radius: 10px;
-        padding: 8px 20px;
-        color: white;
-        box-shadow: 0 10px 20px rgb(225,71,182,0.5);
-        border: 1px;
-        min-width: 185px
-       
-    }
+}
+    
+.buttons{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+    
+.hero-buttn1{
+  background :linear-gradient(to bottom, var(--pink), var(--pink-light));
+  border-radius: 10px;
+  padding: 8px 20px;
+  color: var(--text-white);
+  box-shadow: 0 10px 20px rgb(225,71,182,0.5);
+  border: 1px;
+  min-width: 185px
+ 
+}
   
-     .cursor {
-    display: inline-block;
-    width: 2px;
-    height: 1em;
-    background-color: transparent;
-    margin-left: 2px;
-    vertical-align: middle;
-    animation: blink 0.7s step-end infinite;
+     
+.cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  background-color: transparent;
+  margin-left: 2px;
+  vertical-align: middle;
+  animation: blink 0.7s step-end infinite;
 }
 
 @keyframes blink {
     50% { opacity: 0; }
 }
-    .browse-text {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-    .hero-buttn2{
-       background-color: transparent;
-        border-radius: 10px;
-        padding: 8px 20px;
-        min-width: 130px;
-        color:#5FACAB ;
-        border: 1px solid #5FACAB;
-
-    }
-    .hero-buttn1 a{
-        color: white;
-        text-decoration: none;
-        align-items: center;
-        background-color: transparent;
-        display: flex;
-        justify-content: center;
-        gap: 12px;
-    }
-    .hero-buttn2 a{
-        text-decoration: none;
-        color: #5FACAB;
-        display: flex;
-        align-items: center;
-    }
-    .hero-buttn2:hover{
-      background-color: #314444;
-    }
-    .arrow-icon{
-        width: 18px;
-        height: 18px;
-        background-color: transparent;
-    }
-    .btn-icon{
-       color:#5FACAB ;
     
-    }
-    .rocket-icon{
-        width: 18px;
-        height: 18px;
-    }
-    .cards-container{
-        display:flex;
-        align-items: center;
-        justify-content: center;
-        color: #1A1F3A;
-        padding: 50px 30px;
-        gap: 24px;
-        margin: 0 auto;
-        background-color: #0A0E27;
-        border: 2px solid transparent;
-     
-    }
-    .card-label{
-        color: #99A1AF;
-        font-size: small;
-        font-family: 'Inter' , sans-serif;
+.browse-text {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+    
+.hero-buttn2{
+ background-color: transparent;
+  border-radius: 10px;
+  padding: 8px 20px;
+  min-width: 130px;
+  color:var(--teal) ;
+  border: 1px solid var(--teal);
 
-    }
-    .card-item{
-    background-color:  #1a203a; 
-  color: white;
+}
+    
+.hero-buttn1 a{
+  color: var(--text-white);
+  text-decoration: none;
+  align-items: center;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+    
+.hero-buttn2 a{
+  text-decoration: none;
+  color: var(--teal);
+  display: flex;
+  align-items: center;
+}
+    
+.hero-buttn2:hover{
+  background-color: #314444;
+}
+    
+.arrow-icon{
+  width: 18px;
+  height: 18px;
+  background-color: transparent;
+}
+    
+.btn-icon{
+ 
+ color:var(--teal) ;
+    
+}
+    
+.rocket-icon{
+  width: 18px;
+  height: 18px;
+}
+    
+.cards-container{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  color: var(--surface);
+  padding: 50px 30px;
+  gap: 24px;
+  margin: 0 auto;
+  background-color: var(--bg);
+  border: 2px solid transparent;
+
+}
+    
+.card-label{
+  color: var(--text-muted);
+  font-size: small;
+  font-family: 'Inter' , sans-serif;
+
+}
+    
+.card-item{
+  background-color:  var(--surface); 
+  color: var(--text-white);
   padding: 30px 30px ;
   border-radius: 15px;
   width: 220px;
@@ -155,20 +185,23 @@
   align-items: flex-start; 
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
  border: 1px solid transparent;
-    }
+}
+
 .card-number {
-    color: white;
+    color: var(--text-white);
     font-family: 'Inter', sans-serif;
     font-size: 1.6rem;
     font-weight: 700;
     margin-bottom: 4px;
 }
-    .card-item:hover{
+    
+.card-item:hover{
    
-   border-color: #FD48A7;
+   border-color: var(--pink);
 
-    }
-  .icon {
+}
+ 
+.icon {
   width: 45px;
   height: 45px;
   margin-bottom: 15px;
@@ -185,19 +218,19 @@
 .featured-courses{
     text-align: center;
     padding: 50px 30px;
-    color: white;
+    color: var(--text-white);
 }
 .section-title{
-    color: white;
+    color: var(--text-white);
     font-family: 'Inter' , sans-serif;
     text-align: center;
 }
 .courses-title{
-    color: white;
+    color: var(--text-white);
     font-family: 'Inter' , sans-serif;
 }
 .courses-tagline{
-     color: #99A1AF;
+     color: var(--text-muted);
     font-family: 'Inter' , sans-serif;
     text-align: center;
 }
@@ -210,16 +243,18 @@
    
 }
 .courses-card{
-   background-color:#1A1F3A ;
+   background-color:var(--surface) ;
    border-radius: 15px;
    overflow: hidden;
-   color: white;
+   color: var(--text-white);
    text-align: left;
    display: flex;
    flex-direction: column;
+   border: 1px solid transparent;
+   transition: border-color 0.2s;
 }
 .courses-card:hover{
-    border: 1px solid #FD48A7;
+    border: 1px solid var(--pink);
 }
 .courses-image{
   position: relative; 
@@ -238,7 +273,7 @@
     top: 12px;
      right: 12px;  
      z-index: 2;
-    background-color: #ff40a0; 
+    background-color: var(--pink); 
     padding: 4px 6px;
     border-radius: 20px;
     font-size: 0.75rem;
@@ -253,27 +288,27 @@
 }
 .category{
     font-size: 0.75rem;
-    color: white;
+    color: var(--text-white);
     margin-bottom: 0.5rem;
 }
 .card-title{
       font-family: 'Inter' , sans-serif;
       font-size: 1rem;
       font-weight: 700;
-      color: white;
+      color: var(--text-white);
       line-height: 1.3;
       margin-bottom: 0.45rem;
 }
 .description{
     font-size: 0.8rem;
-      color: #777;
+      color: var(--text-muted);
       line-height: 1.55;
       margin-bottom: 0.6rem;  
       overflow: hidden;
 }
 .instructor {
       font-size: 0.78rem;
-      color: #999;
+      color: var(--text-muted);;
       margin-bottom: 0.8rem;
     }
 
@@ -291,29 +326,29 @@
     display: flex;
     align-items: center;
     gap: 5px;
-    color: white;
+    color: var(--text-white);
     font-size: 0.85rem;
 }
 
 .card-rating .fa-star {
-    color: #FF40A0;
+    color: var(--pink);
     font-size: 0.85rem;
 }
 
 .rating-count {
-    color: #777;
+    color: var(--text-muted);
 }
 
 .card-students {
     display: flex;
     align-items: center;
     gap: 5px;
-    color: #777;
+    color:var(--text-muted);
     font-size: 0.85rem;
 }
 
 .card-students .fa-users {
-    color: #BDC2C9;
+    color: var(--text-muted);
     font-size: 0.85rem;
 }    
     .card-footer {
@@ -325,22 +360,22 @@
 }
 
     .price{
-        font-size: 150%;
-        color:#FD369D ;
+    font-size: 150%;
+        color:var(--pink);
         font-family: 'Inter' , sans-serif;
         white-space: nowrap;
        
     }
     .btn-details{
-     background :linear-gradient(to right, #FD48A7, #FEABDF);
+     background :linear-gradient(to right, var(--pink), var(--pink-light));
      border: 1px;
      border-radius: 6px;
-     color: white;
+     color: var(--text-white);
      padding: 6px 12px;
     }
     .btn-details a{
         text-decoration: none;
-        color: white;
+        color: var(--text-white);
     }
   .view-all-container{
    display: flex;
@@ -351,30 +386,30 @@
   }
   .view-all {
   background-color: transparent; 
-    color: #F0FE72;
+    color: var(--yellow);
     text-decoration: none;
     padding: 12px 24px;
     border-radius: 8px;
     font-weight: 600;
     font-size: 0.95rem;
-    border: 1px solid #F0FE72; 
+    border: 1px solid var(--yellow); 
     transition: all 0.3s ease;
   }
   .view-all:hover{
     background: #21262E;
   }
   .challenges{
-        display: flex;
+    display: flex;
   align-items: center;
   gap: 4rem;
   padding: 4rem 3rem;
-  background-color: #0A0E27;
+  background-color: var(--bg);
    
   }
   .challenge{
-    color: #F0FE72;
+    color: var(--yellow);
     border-radius: 50px;
-    border: 1px solid #F0FE72;
+    border: 1px solid var(--yellow);
     padding: 10px 20px;
     background-color:  #21262E;
   
@@ -389,19 +424,19 @@
   }
 
   .challenges-content h1 {
-    color: white;
+    color: var(--text-white);
     font-family: 'Inter', sans-serif;
     margin: 0;
 }
 
 .challenges-content p {
-    color: #99A1AF;
+    color: var(--text-muted);
     font-family: 'Inter', sans-serif;
     margin: 0;
 }
 
 .challenge-btn {
-    background-color: #EFFE67;
+    background-color: var(--yellow);
     border-radius: 8px;
     border: none;
     padding: 8px 20px;
@@ -422,7 +457,7 @@
   gap: 1rem;
 }
 .challenges-card {
-  background: #1A1F3A;
+  background: var(--surface);
   border-radius: 16px;
   padding: 1.5rem 1.8rem;
   border: 1px solid transparent;
@@ -434,11 +469,11 @@
 }
 
 .challenges-card:hover {
-   border-color: #FD48A7;
+   border-color: var(--pink);
  }
 
 .challenge-title {
-  color: white;
+  color: var(--text-white);
   font-size: 1.1rem;
   font-weight: 700;
   margin: 0;
@@ -450,7 +485,7 @@
   align-items: center;
 }
 .points {
-   color: #F0FE72;
+   color: var(--yellow);
    font-size: 0.78rem; 
   }
 
@@ -463,9 +498,9 @@
 .easy { background: rgba(0,200,100,0.15); color: #00c864; border: 1px solid #00c864; }
 .hard { background: rgba(255,60,60,0.15);  color: #ff4444; border: 1px solid #ff4444; }
   .challenge-btn{
-    background-color: #EFFE67;
+    background-color: var(--yellow);
     border-radius: 8px;
-    border: 1px solid #EFFE67 ;
+    border: 1px solid var(--yellow);
      padding: 8px 20px;
      box-shadow: 0 10px 20px #46493C;
   }
@@ -477,7 +512,7 @@
  .why-DevStudio {
   text-align: center;
   padding: 5rem 3rem;
-  background-color: #0A0E27;
+  background-color: var(--bg);
 }
 
 .learning-grid {
@@ -487,7 +522,7 @@
   margin-top: 3rem;
 }
 .learning-card {
-  background: #1A1F3A;
+  background: var(--surface);
   border-radius: 14px;
   padding: 2rem 1.5rem;
   text-align: left;
@@ -498,43 +533,43 @@
   gap: 0.75rem;
 }
 .learning-card:hover {
-  border-color: #FD48A7;
+  border-color: var(--pink);
 }
 .learning-icon {
   font-size: 1.8rem;
 }
 .learning-title {
-  color: white;
+  color: var(--text-white);
   font-size: 1rem;
   font-weight: 700;
   font-family: 'Inter', sans-serif;
    margin: 0;
 }
 .learning-desc {
-  color: #99A1AF;
+  color: var(--text-muted);
   font-size: 0.85rem;
   line-height: 1.6;
   margin: 0;
 }
 .start-learning{
-   background: linear-gradient(to right, #fd48a7, #a78cc0, #5facab);
+   background: linear-gradient(to right, var(--pink), #a78cc0, var(--teal));
  border-radius: 20px;
   padding: 4rem 2rem;
   text-align: center;
-  margin: 5rem 3rem;        /* gives the floating look */
+  margin: 5rem 3rem;       
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .start-learning h1{
-   color: white;
+   color: var(--text-white);
     font-family: 'Inter', sans-serif;
     margin: 0;
 }
 
 .start-learning p{
-  color: rgba(255,255,255,0.85);
+  color: var(--text-white);
     font-family: 'Inter', sans-serif;
     font-size: 1.05rem;
     margin-top: 1rem;
@@ -544,7 +579,7 @@
      border-radius: 999px;
     padding: 12px 32px;
     font-family: 'Inter' , sans-serif;
-    background-color: white;
+    background-color: var(--text-white);
     font-size: 1rem;
     margin-top: 1rem;
 
@@ -557,43 +592,73 @@
 }
 .learning-btn a{
     text-decoration: none;
-   color:#FD369D;
+   color:var(--pink);
    font-weight: 700;
 }
-@media (max-width: 480px) {
-    .hero-title1,
-    .hero-title2 {
-        font-size: 32px;
+@media (max-width: 768px) {
+    .hero {
+        padding: 3rem 1.5rem 4rem;
     }
 
-    .hero-tagline {
-        font-size: 0.8rem;
-        padding: 6px 14px;
+    .hero-title1,
+    .hero-title2 {
+        font-size: 40px;
+    }
+
+    .hero p br {
+        display: none;
+    }
+
+    .cards-container {
+        flex-wrap: wrap;
+        padding: 30px 16px;
+        gap: 16px;
     }
 
     .card-item {
-        width: 100%;
+        width: calc(50% - 8px);
     }
 
-    .buttons {
+    .courses-grid {
+        grid-template-columns: 1fr;
+        padding: 16px;
+        margin: 0 auto 1rem;
+    }
+
+    .challenges {
         flex-direction: column;
-        width: 100%;
+        padding: 3rem 1.5rem;
+        gap: 2rem;
     }
 
-    .hero-buttn1,
-    .hero-buttn2 {
-        width: 100%;
+    .challenges-content {
+        align-items: center;
+        text-align: center;
     }
 
     .challenges-grid {
-        grid-template-columns: 1fr;
+        width: 100%;
+        grid-template-columns: 1fr 1fr;
     }
 
     .learning-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
     }
 
-    .section-title {
-        font-size: 1.5rem;
+    .start-learning {
+        margin: 3rem 1.5rem;
+        padding: 3rem 1.5rem;
+    }
+
+    .why-DevStudio {
+        padding: 3rem 1.5rem;
+    }
+
+    .featured-courses {
+        padding: 30px 16px;
+    }
+
+    .view-all-container {
+        padding-bottom: 1.5rem;
     }
 }
