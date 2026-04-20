@@ -185,6 +185,10 @@ textarea {
   transition: 0.3s;
   width:100%;
 }
+.edit-btn a{
+  text-decoration:none;
+  color:var(--text-white);
+}
 
 .edit-btn:hover {
   opacity: 0.85;
