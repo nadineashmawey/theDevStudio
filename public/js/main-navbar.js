@@ -5,48 +5,48 @@ function getRole() {
 
 // ===== NAVIGATION =====
 function goHome() {
-  window.location.href = "index.html";
+  window.location.href = "/index.html";
 }
 
 function goLogin() {
-  window.location.href = "public/pages/public/login.html";
+  window.location.href = "/public/pages/public/login.html";
 }
 
 function goSignup() {
-  window.location.href = "public/pages/public/signup.html";
+  window.location.href = "/public/pages/public/signup.html";
 }
 
 function goCourses() {
-  window.location.href = "public/pages/public/all-courses.html";
+  window.location.href = "/public/pages/public/all-courses.html";
 }
 
 function goChallenges() {
-  window.location.href = "public/pages/public/coding-challenges.html";
+  window.location.href = "/public/pages/public/coding-challenges.html";
 }
 
 function goDashboard() {
   const routes = {
-    instructor: "public/pages/instructor/dashboard.html",
-    student:    "public/pages/student/dashboard.html",
-    admin:      "public/pages/admin/dashboard.html"
+    instructor: "/public/pages/instructor/dashboard.html",
+    student:    "/public/pages/student/dashboard.html",
+    admin:      "/public/pages/admin/dashboard.html"
   };
 
-  window.location.href = routes[getRole()] || "public/pages/public/login.html";
+  window.location.href = routes[getRole()] || "/public/pages/public/login.html";
 }
 
 function goProfile() {
   const routes = {
-    instructor: "public/pages/instructor/profile.html",
-    student:    "public/pages/student/profile.html",
-    admin:      "public/pages/admin/profile.html"
+    instructor: "/public/pages/instructor/profile.html",
+    student:    "/public/pages/student/profile.html",
+    admin:      "/public/pages/admin/profile.html"
   };
 
-  window.location.href = routes[getRole()] || "public/pages/public/login.html";
+  window.location.href = routes[getRole()] || "/public/pages/public/login.html";
 }
 
 function logout() {
   localStorage.removeItem("role");
-  window.location.href = "index.html";
+  window.location.href = "/index.html";
 }
 
 // ===== GUEST NAVBAR (YOUR DESIGN) =====
