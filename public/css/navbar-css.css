@@ -39,7 +39,7 @@ body {
   border-radius: 10px;
 
   background: linear-gradient(135deg, var(--pink), var(--pink-light));
-
+ 
   display: flex;
   align-items: center;
   justify-content: center;
@@ -48,18 +48,20 @@ body {
 }
 
 .navbar .nav-logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-
-  font-weight: 700;
-  font-size: 18px;
-  color: var(--text-white);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--text-white);
+    background-color: var(--surface); /* ✅ matches navbar background */
+    padding: 0;
 }
 
 .nav-logo-icon i {
   color: var(--text-white);
   font-size: 16px;
+ 
 }
 
 
@@ -158,6 +160,9 @@ body {
 
 /* LEFT */
 .nav-left {
+   background-color: transparent; 
+    border: none;                 
+    padding: 0;
   display: flex;
   align-items: center;
   gap: 10px;
