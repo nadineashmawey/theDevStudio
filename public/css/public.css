@@ -1,3 +1,7 @@
+/* ========================================
+   Variables & Reset
+   ======================================== */
+
 :root {
   --pink:       #FF40A0;
   --pink-light: #FFB7E6;
@@ -22,14 +26,22 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* ── Layout ── */
+.hidden { display: none !important; }
+
+/* ========================================
+   Layout
+   ======================================== */
+
 .main-content {
   max-width: 1400px;
   margin: 0 auto;
   padding: 40px 40px 80px;
 }
 
-/* ── Hero ── */
+/* ========================================
+   Hero
+   ======================================== */
+
 .hero-section { padding: 40px 0 32px; }
 
 .hero-title {
@@ -40,65 +52,17 @@ body {
   line-height: 1.15;
 }
 
-.hero-subtitle {
-  font-size: 1rem;
-  color: var(--text-body);
-}
-.fp-grid {
-  display: grid;
-  grid-template-columns: 1fr 1.15fr;
-  gap: 40px;
-  align-items: stretch;
-  margin-top: 60px;
-}
+/* Shared muted body color */
+.hero-subtitle,
+.fp-left-subtitle,
+.fp-form-subtitle { color: var(--text-body); }
 
-.fp-left,
-.fp-right {
-  background-color: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  padding: 48px 40px;
-}
+.hero-subtitle { font-size: 1rem; }
 
-.fp-left {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
+/* ========================================
+   Search & Filters
+   ======================================== */
 
-/* ── Left Panel ── */
-.fp-left-title {
-  font-size: 2.2rem;
-  font-weight: 800;
-  line-height: 1.2;
-  margin-bottom: 18px;
-}
-
-.fp-accent { color: var(--pink); }
-
-.fp-left-subtitle {
-  font-size: 1rem;
-  color: var(--text-body);
-  line-height: 1.6;
-  margin-bottom: 40px;
-}
-
-.fp-steps {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
-.fp-step {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  font-size: 1rem;
-  color: var(--text-body);
-}
-
-/* ── Search & Filters ── */
 .search-filter-section {
   display: flex;
   align-items: center;
@@ -111,68 +75,8 @@ body {
   flex: 1;
 }
 
-.search-icon {
-  position: absolute;
-  left: 16px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: var(--text-muted);
-  display: flex;
-  align-items: center;
-}
-.fp-step-num {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background: linear-gradient(to bottom right, var(--pink), var(--pink-light));
-  color: var(--text-white);
-  font-size: 0.9rem;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-/* ── Right Panel (Form) ── */
-.fp-form-title {
-  font-size: 2rem;
-  font-weight: 800;
-  margin-bottom: 10px;
-}
-
-.fp-form-subtitle {
-  font-size: 0.95rem;
-  color: var(--text-body);
-  line-height: 1.6;
-  margin-bottom: 36px;
-}
-
-.fp-success {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 14px 18px;
-  background: rgba(96, 163, 166, 0.15);
-  border: 1px solid rgba(96, 163, 166, 0.3);
-  border-radius: 10px;
-  color: var(--teal);
-  font-size: 0.9rem;
-  font-weight: 500;
-  margin-bottom: 24px;
-}
-
-.fp-form-group { margin-bottom: 24px; }
-
-.fp-label {
-  display: block;
-  font-size: 0.875rem;
-  font-weight: 600;
-  margin-bottom: 10px;
-}
-
-.fp-input-wrapper { position: relative; }
-
+/* Shared absolute icon positioning */
+.search-icon,
 .fp-input-icon {
   position: absolute;
   left: 16px;
@@ -183,17 +87,10 @@ body {
   align-items: center;
 }
 
-.search-input {
-  width: 100%;
-  padding: 14px 16px 14px 46px;
-  background-color: var(--surface);
-  font-size: 0.95rem;
-}
-
+/* Shared input base */
+.search-input,
 .fp-input {
   width: 100%;
-  padding: 14px 16px 14px 44px;
-  background-color: var(--bg);
   border: 1px solid var(--border);
   border-radius: 10px;
   color: var(--text-white);
@@ -203,8 +100,23 @@ body {
   transition: border-color 0.2s ease;
 }
 
-.search-input::placeholder { color: var(--text-muted); }
-.search-input:focus        { border-color: rgba(255, 64, 160, 0.5); }
+.search-input {
+  padding: 14px 16px 14px 46px;
+  background-color: var(--surface);
+}
+
+.fp-input {
+  padding: 14px 16px 14px 44px;
+  background-color: var(--bg);
+}
+
+.search-input::placeholder,
+.fp-input::placeholder { color: var(--text-muted); }
+
+.search-input:focus,
+.fp-input:focus { border-color: rgba(255, 64, 160, 0.5); }
+
+.fp-input.error { border-color: var(--pink); }
 
 .filters-toggle-btn {
   display: flex;
@@ -276,7 +188,10 @@ body {
   margin-bottom: 24px;
 }
 
-/* ── Course Grid ── */
+/* ========================================
+   Course Grid & Cards
+   ======================================== */
+
 .course-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -349,8 +264,13 @@ body {
 
 .card-category { color: var(--yellow); }
 
+/* Shared muted text color */
 .card-dot,
-.card-hours    { color: var(--text-muted); }
+.card-hours,
+.card-desc,
+.card-author,
+.card-students,
+.rating-count { color: var(--text-muted); }
 
 .card-title {
   font-size: 1.05rem;
@@ -361,14 +281,12 @@ body {
 
 .card-desc {
   font-size: 0.875rem;
-  color: var(--text-muted);
   line-height: 1.5;
   margin-bottom: 8px;
 }
 
 .card-author {
   font-size: 0.85rem;
-  color: var(--text-muted);
   margin-bottom: 16px;
 }
 
@@ -380,13 +298,17 @@ body {
   margin-bottom: 18px;
 }
 
-.card-rating {
+/* Shared flex row — rating & students */
+.card-rating,
+.card-students {
   display: flex;
   align-items: center;
-  gap: 5px;
   font-size: 0.875rem;
-  font-weight: 600;
 }
+
+.card-rating  { gap: 5px; font-weight: 600; }
+.card-students { gap: 6px; }
+.card-students i { opacity: 0.7; }
 
 .star-icon,
 .card-rating .fa-star {
@@ -395,20 +317,7 @@ body {
   flex-shrink: 0;
 }
 
-.rating-count {
-  font-weight: 400;
-  color: var(--text-muted);
-}
-
-.card-students {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 0.875rem;
-  color: var(--text-muted);
-}
-
-.card-students i { opacity: 0.7; }
+.rating-count { font-weight: 400; }
 
 .card-footer {
   display: flex;
@@ -449,19 +358,112 @@ body {
   font-size: 1rem;
 }
 
-.hidden { display: none !important; }
+/* ========================================
+   Forgot Password
+   ======================================== */
 
-/* ── Responsive ── */
-@media (max-width: 1024px) {
-  .course-grid { grid-template-columns: repeat(2, 1fr); }
+.fp-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 40px;
+  align-items: stretch;
+  margin-top: 60px;
 }
 
-@media (max-width: 640px) {
-  .main-content { padding: 24px 20px 60px; }
+.fp-left,
+.fp-right {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 48px 40px;
 }
-.fp-input::placeholder { color: var(--text-muted); }
-.fp-input:focus        { border-color: rgba(255, 64, 160, 0.5); }
-.fp-input.error        { border-color: var(--pink); }
+
+.fp-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.fp-left-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 18px;
+}
+
+.fp-accent { color: var(--pink); }
+
+.fp-left-subtitle {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+
+.fp-steps {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.fp-step {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 1rem;
+  color: var(--text-body);
+}
+
+.fp-step-num {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(to bottom right, var(--pink), var(--pink-light));
+  color: var(--text-white);
+  font-size: 0.9rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.fp-form-title {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.fp-form-subtitle {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 36px;
+}
+
+.fp-success {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 18px;
+  background: rgba(96, 163, 166, 0.15);
+  border: 1px solid rgba(96, 163, 166, 0.3);
+  border-radius: 10px;
+  color: var(--teal);
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 24px;
+}
+
+.fp-form-group { margin-bottom: 24px; }
+
+.fp-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.fp-input-wrapper { position: relative; }
 
 .fp-error {
   display: block;
@@ -490,6 +492,13 @@ body {
 .fp-btn-send:active   { transform: translateY(0); }
 .fp-btn-send:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
 
+/* Shared hover opacity — fp links */
+.fp-back-link,
+.fp-signup-link { transition: opacity 0.2s ease; }
+
+.fp-back-link:hover,
+.fp-signup-link:hover { opacity: 0.75; }
+
 .fp-back-link {
   display: flex;
   align-items: center;
@@ -499,11 +508,8 @@ body {
   font-weight: 600;
   color: var(--teal);
   text-decoration: none;
-  transition: opacity 0.2s ease;
   margin-bottom: 28px;
 }
-
-.fp-back-link:hover { opacity: 0.75; }
 
 .fp-divider {
   height: 1px;
@@ -521,10 +527,7 @@ body {
   color: var(--pink);
   font-weight: 600;
   text-decoration: none;
-  transition: opacity 0.2s ease;
 }
-
-.fp-signup-link:hover { opacity: 0.75; }
 
 .fp-help-btn {
   position: fixed;
@@ -548,7 +551,14 @@ body {
   color: var(--text-white);
 }
 
-/* ── Responsive ── */
+/* ========================================
+   Responsive
+   ======================================== */
+
+@media (max-width: 1024px) {
+  .course-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
 @media (max-width: 900px) {
   .fp-grid  { grid-template-columns: 1fr; }
   .fp-left,
