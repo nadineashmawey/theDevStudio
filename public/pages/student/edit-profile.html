@@ -3,9 +3,8 @@
 <head>
     <title>Edit Profile</title>
     <link rel="stylesheet" href="/public/css/edit-profile.css">
-    <script src="/public/js/editProfile.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="/public/css/navbar-css.css">
+     <link rel="stylesheet" href="/public/css/navbar-css.css">
 </head>
 <body>
     <div class="container">
@@ -107,6 +106,7 @@
                     <span class="field-icon"><i class="fa-solid fa-lock"></i></span>
                     <input type="password" id="newpass" class="pass-input" placeholder="Enter new password"/>
                 </div>
+                <span class="error-msg" id="err-new"></span>  
             </div>
 
             <div class="field-group">
@@ -115,6 +115,7 @@
                     <span class="field-icon"><i class="fa-solid fa-lock"></i></span>
                     <input type="password" id="confirmpass" class="pass-input" placeholder="Confirm new password"/>
                 </div>
+                <span class="error-msg" id="err-confirmpass"></span>  
             </div>
         </div>
 
@@ -126,21 +127,7 @@
 
     </div>
 
-    <script>
-        const avatars = document.querySelectorAll('.grid-avatars img');
-        const selectedImg = document.getElementById('selected-img');
-
-        avatars.forEach(avatar => {
-            avatar.addEventListener('click', () => {
-                avatars.forEach(a => a.classList.remove('active'));
-                avatar.classList.add('active');
-                selectedImg.src = avatar.src;
-                selectedImg.alt = avatar.alt;
-            });
-        });
-
-        avatars[0].classList.add('active');
-    </script>
-    <script src="/public/js/main-navbar.js"></script>
+  <script src="/public/js/edit-Profile.js"></script>
+  <script src="/public/js/main-navbar.js"></script>
 </body>
 </html>

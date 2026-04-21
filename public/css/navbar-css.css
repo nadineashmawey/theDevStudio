@@ -15,6 +15,9 @@
 /* =========================
    GUEST NAVBAR
 ========================= */
+body {
+  display: block !important;
+}
 .navbar {
   display: flex;
   align-items: center;
@@ -30,17 +33,7 @@
 }
 
 /* LOGO */
-.navbar .nav-logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-
-  font-weight: 700;
-  font-size: 18px;
-  color: var(--text-white);
-}
-
-.navbar .nav-logo-icon {
+.nav-logo-icon {
   width: 36px;
   height: 36px;
   border-radius: 10px;
@@ -52,8 +45,26 @@
   justify-content: center;
 
   color: var(--text-white);
+}
+
+.navbar .nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--text-white);
+}
+
+.nav-logo-icon i {
+  color: var(--text-white);
   font-size: 16px;
 }
+
+
+
+
 
 /* LINKS */
 .navbar .nav-links {
@@ -93,24 +104,37 @@
   color: var(--text-white);
   border-color: var(--text-muted);
 }
-
-.navbar .btn-signup {
-  background: linear-gradient(135deg, var(--pink), var(--pink-light));
-  color: var(--text-white);
+.nav-actions .btn-signup { 
+  background: linear-gradient(135deg, var(--pink), var(--pink-light)); 
+  color: var(--text-white); 
   font-weight: 600;
-  font-size: 14px;
-
-  padding: 9px 20px;
+   font-size: 14px; 
+  padding: 9px 20px; 
   border-radius: 8px;
-  border: none;
+   border: none; 
+  cursor: pointer; 
+  transition: 0.2s;}
 
-  cursor: pointer;
-  transition: 0.2s;
+
+.top-navbar .nav-actions .btn-signup {
+  background: linear-gradient(135deg, var(--pink), var(--pink-light));
+   color: var(--text-white);
+    font-weight: 600; 
+   font-size: 14px; 
+   padding: 9px 20px;
+    border-radius: 8px; 
+    border: none;
+     cursor: pointer;
+      transition: 0.2s;
+
+
 }
 
-.navbar .btn-signup:hover {
-  opacity: 0.85;
+.top-navbar .nav-actions .btn-signup:hover {
+  background: var(--pink-light);
+  opacity: 0.9;
 }
+
 
 /* =========================
    USER NAVBAR
@@ -119,7 +143,12 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-
+  position: sticky;
+  top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-sizing: border-box;
   padding: 12px 32px;
   background: var(--bg);
   border-bottom: 1px solid var(--border);
@@ -128,6 +157,17 @@
 }
 
 /* LEFT */
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+.nav-left:hover {
+  opacity: 0.85;
+  transform: translateY(-1px);
+  transition: 0.2s;
+}
 .top-navbar .nav-left {
   display: flex;
   align-items: center;
@@ -162,6 +202,9 @@
   display: flex;
   align-items: center;
   gap: 14px;
+   color: var(--text-muted);
+    text-decoration: none;
+    font-size: 14px;
 }
 
 /* PROFILE */
@@ -221,4 +264,9 @@
 
 .top-navbar .logout-icon:hover i {
   color: var(--text-white);
+}
+.top-navbar .nav-center,
+.top-navbar .nav-actions {
+  display: flex;
+  align-items: center;
 }

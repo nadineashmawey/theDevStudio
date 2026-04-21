@@ -94,7 +94,8 @@
       }
 
       // after successful login or signup
-      localStorage.setItem("role", "student");
+     localStorage.setItem("role", selectedRole);
+     
       const routes = {
         student:    "../../pages/student/dashboard.html",
         instructor: "../../pages/instructor/dashboard.html",
