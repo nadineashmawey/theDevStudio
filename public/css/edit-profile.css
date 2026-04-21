@@ -14,8 +14,6 @@
 
 body {
     background-color: var(--bg);
-    display: flex;
-    justify-content: center;
     padding: 2rem;
     font-family: var(--font);
 }
@@ -23,6 +21,8 @@ body {
 .container {
     width: 80%;
     max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
 }
 
 h2 {
