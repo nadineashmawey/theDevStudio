@@ -1,12 +1,28 @@
-// ================= ROLE =================
+// ===== ROLE =====
 function getRole() {
   return localStorage.getItem("role");
 }
 
-// ================= NAVIGATION =================
-function goHome()       { window.location.href = "/index.html"; }
-function goCourses()    { window.location.href = "/public/pages/public/all-courses.html"; }
-function goChallenges() { window.location.href = "/public/pages/public/coding-challenges.html"; }
+// ===== NAVIGATION =====
+function goHome() {
+  window.location.href = "/index.html";
+}
+
+function goLogin() {
+  window.location.href = "/public/pages/public/login.html";
+}
+
+function goSignup() {
+  window.location.href = "/public/pages/public/signup.html";
+}
+
+function goCourses() {
+  window.location.href = "/public/pages/public/all-courses.html";
+}
+
+function goChallenges() {
+  window.location.href = "/public/pages/public/coding-challenges.html";
+}
 
 function goDashboard() {
   const routes = {
@@ -14,6 +30,7 @@ function goDashboard() {
     student:    "/public/pages/student/dashboard.html",
     admin:      "/public/pages/admin/dashboard.html"
   };
+
   window.location.href = routes[getRole()] || "/public/pages/public/login.html";
 }
 
@@ -23,6 +40,7 @@ function goProfile() {
     student:    "/public/pages/student/profile.html",
     admin:      "/public/pages/admin/profile.html"
   };
+
   window.location.href = routes[getRole()] || "/public/pages/public/login.html";
 }
 
@@ -31,36 +49,67 @@ function logout() {
   window.location.href = "/index.html";
 }
 
-// ================= NAVBAR =================
-function createNavbar() {
+// ===== GUEST NAVBAR (YOUR DESIGN) =====
+function createGuestNavbar() {
   const nav = document.createElement("nav");
-  nav.className = "top-navbar";
+  nav.className = "navbar";
+
   nav.innerHTML = `
-    <div class="nav-left" onclick="goHome()">
-      <div class="logo-icon">
+    <div class="nav-logo" onclick="goHome()" style="cursor:pointer;">
+      <div class="nav-logo-icon">
         <i class="fa-solid fa-graduation-cap"></i>
       </div>
-      <span class="logo-text">EduPlatform</span>
+      EduPlatform
     </div>
-    <div class="nav-center">
+
+    <div class="nav-links">
       <a onclick="goCourses()">Courses</a>
       <a onclick="goChallenges()">Challenges</a>
-      <a onclick="goDashboard()">Dashboard</a>
     </div>
-    <div class="nav-right">
-      <div class="profile-pill" onclick="goProfile()">
-        <div class="avatar">
-          <i class="fa-solid fa-user"></i>
-        </div>
-        <span id="nav-profile-name">Alex Johnson</span>
-      </div>
-      <div class="logout-icon" onclick="logout()">
-        <i class="fa-solid fa-arrow-right-from-bracket"></i>
-      </div>
+
+    <div class="nav-actions">
+      <span class="btn-login" onclick="goLogin()">Login</span>
+      <button class="btn-signup" onclick="goSignup()">Sign Up</button>
     </div>
   `;
-  document.body.insertBefore(nav, document.body.firstChild);
+
+  return nav;
 }
 
-// ================= INIT =================
-document.addEventListener("DOMContentLoaded", createNavbar);
+// ===== USER NAVBAR =====
+function createUserNavbar() {
+  const nav = document.createElement("nav");
+  nav.className = "top-navbar";
+
+  nav.innerHTML = `
+    <div class="nav-left" onclick="goHome()">
+      <span class="logo-text">EduPlatform</span>
+    </div>
+
+    <div class="nav-center">
+      <a onclick="goCourses()">Courses</a>
+      <a onclick="goDashboard()">Dashboard</a>
+    </div>
+
+    <div class="nav-right">
+      <a onclick="goProfile()">Profile</a>
+      <a onclick="logout()">Logout</a>
+    </div>
+  `;
+
+  return nav;
+}
+
+// ===== RENDER =====
+function renderNavbar() {
+  const role = getRole();
+
+  const nav = role
+    ? createUserNavbar()
+    : createGuestNavbar();
+
+  document.body.prepend(nav);
+}
+
+// ===== INIT =====
+document.addEventListener("DOMContentLoaded", renderNavbar);

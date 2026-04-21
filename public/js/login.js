@@ -45,7 +45,7 @@ signinForm.addEventListener("submit", (e) => {
     redirectUser();
   }, 50);
 });
-
+localStorage.setItem("role", "student");
 function redirectUser() {
   if (selectedRole === "Student") {
     window.location.href = "/../../../public/pages/student/dashboard.html";
