@@ -1,0 +1,363 @@
+:root {
+  --pink:       #FF40A0;
+  --pink-light: #FFB7E6;
+  --yellow:     #F0FE72;
+  --teal:       #60A3A6;
+  --bg:         #0A0E27;
+  --surface:    #1A203A;
+  --border:     rgba(255, 255, 255, 0.08);
+  --text-white: #FFFFFC;
+  --text-muted: #BDC2C9;
+  --text-body:  #C8D0E7;
+  --font:       'Inter', sans-serif;
+  --radius:     12px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--text-body);
+  font-family: var(--font);
+  min-height: 100vh;
+}
+
+/* ── LAYOUT ─────────────────────────────────── */
+.enroll-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 48px 40px 80px;
+}
+
+.enroll-title {
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--text-white);
+  margin-bottom: 32px;
+}
+
+.enroll-grid {
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+/* ── SHARED CARD ─────────────────────────────── */
+.enroll-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.enroll-card h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-white);
+}
+
+/* ── COURSE SUMMARY (LEFT) ───────────────────── */
+.course-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.course-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-white);
+}
+
+.course-author {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-top: -8px;
+}
+
+.course-desc {
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--text-body);
+}
+
+.course-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.course-meta .fa-star { color: var(--yellow); }
+.dot { opacity: 0.4; }
+
+.course-price {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--pink);
+}
+
+.course-access {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-top: -10px;
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid var(--border);
+}
+
+.guarantee {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 14px 18px;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.guarantee i { color: var(--teal); font-size: 16px; }
+
+/* ── PAYMENT FORM (RIGHT) ────────────────────── */
+.payment-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 4px;
+}
+
+.payment-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--pink), #e0308a);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  color: #fff;
+  flex-shrink: 0;
+  box-shadow: 0 4px 14px rgba(255, 64, 160, 0.4);
+}
+
+.payment-sub {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+/* ── FORM FIELDS ─────────────────────────────── */
+.field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.field-group label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-body);
+  letter-spacing: 0.2px;
+}
+
+.field-group input,
+.field-group input::placeholder {
+  font-family: var(--font);
+}
+
+.field-group input {
+  width: 100%;
+  background: rgba(10, 14, 39, 0.7);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text-white);
+  font-size: 14px;
+  padding: 13px 16px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.field-group input::placeholder { color: rgba(189, 194, 201, 0.4); }
+
+.field-group input:focus {
+  border-color: rgba(255, 64, 160, 0.5);
+  box-shadow: 0 0 0 3px rgba(255, 64, 160, 0.08);
+}
+
+/* card number row with brand badges */
+.input-row {
+  position: relative;
+}
+
+.input-row input { padding-right: 100px; }
+
+.card-brands {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  gap: 6px;
+}
+
+.brand {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+}
+
+.brand.visa { background: var(--pink);  color: #fff; }
+.brand.mc   { background: #3a3f5c;      color: var(--text-white); }
+
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* ── ORDER SUMMARY ───────────────────────────── */
+.order-summary {
+  background: rgba(10, 14, 39, 0.5);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.order-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.total-row {
+  border-top: 1px solid var(--border);
+  padding-top: 12px;
+  font-weight: 700;
+  color: var(--text-white);
+  font-size: 15px;
+}
+
+.total-amount { color: var(--pink); font-size: 20px; }
+
+/* ── TERMS ───────────────────────────────────── */
+.terms-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 13.5px;
+  color: var(--text-muted);
+  line-height: 1.6;
+  cursor: pointer;
+}
+
+.terms-label input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  margin-top: 2px;
+  accent-color: var(--pink);
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+/* ── CONFIRM BUTTON ──────────────────────────── */
+.btn-confirm {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: linear-gradient(135deg, var(--pink), #ff6ec4);
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  font-family: var(--font);
+  font-size: 16px;
+  font-weight: 700;
+  padding: 16px;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.15s;
+  box-shadow: 0 6px 24px rgba(255, 64, 160, 0.45);
+}
+
+.btn-confirm:hover  { opacity: 0.88; transform: translateY(-1px); }
+.btn-confirm:active { transform: translateY(0); }
+
+.btn-confirm:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ── FOOTER NOTES ────────────────────────────── */
+.secure-note {
+  text-align: center;
+  font-size: 13px;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+}
+
+.secure-note i { font-size: 12px; }
+
+.back-link {
+  text-align: center;
+  font-size: 13px;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.back-link:hover { color: var(--pink-light); }
+
+/* ── VALIDATION ──────────────────────────────── */
+.field-error {
+  font-size: 12px;
+  color: var(--pink);
+  min-height: 16px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.field-error.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.field-group input.invalid {
+  border-color: rgba(255, 64, 160, 0.6);
+  box-shadow: 0 0 0 3px rgba(255, 64, 160, 0.1);
+}
+
+.field-group input.valid {
+  border-color: rgba(96, 163, 166, 0.6);
+  box-shadow: 0 0 0 3px rgba(96, 163, 166, 0.08);
+}
+
+/* ── RESPONSIVE ──────────────────────────────── */
+@media (max-width: 860px) {
+  .enroll-grid { grid-template-columns: 1fr; }
+  .enroll-wrapper { padding: 32px 20px 60px; }
+  .enroll-title { font-size: 28px; }
+}

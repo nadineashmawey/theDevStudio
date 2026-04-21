@@ -1,0 +1,203 @@
+// ─────────────────────────────────────────────
+//  Helpers
+// ─────────────────────────────────────────────
+function showError(fieldId, message) {
+  const input = document.getElementById(fieldId);
+  const error = document.getElementById('err-' + fieldId);
+  if (input)  { input.classList.add('invalid'); input.classList.remove('valid'); }
+  if (error)  { error.innerHTML = '<i class="fa-solid fa-circle-exclamation"></i> ' + message; error.classList.add('visible'); }
+}
+
+function clearError(fieldId) {
+  const input = document.getElementById(fieldId);
+  const error = document.getElementById('err-' + fieldId);
+  if (input)  { input.classList.remove('invalid'); input.classList.add('valid'); }
+  if (error)  { error.textContent = ''; error.classList.remove('visible'); }
+}
+
+function clearAll() {
+  ['cardName','cardNumber','expiry','cvv','terms'].forEach(id => {
+    const input = document.getElementById(id);
+    const error = document.getElementById('err-' + id);
+    if (input) { input.classList.remove('invalid','valid'); }
+    if (error) { error.textContent = ''; error.classList.remove('visible'); }
+  });
+}
+
+// ─────────────────────────────────────────────
+//  Individual validators  (return true = valid)
+// ─────────────────────────────────────────────
+function validateName() {
+  const val = document.getElementById('cardName').value.trim();
+  if (!val) {
+    showError('cardName', 'Cardholder name is required.'); return false;
+  }
+  if (val.length < 3) {
+    showError('cardName', 'Name must be at least 3 characters.'); return false;
+  }
+  if (!/^[a-zA-Z\s\'-]+$/.test(val)) {
+    showError('cardName', 'Name can only contain letters, spaces, hyphens, or apostrophes.'); return false;
+  }
+  clearError('cardName'); return true;
+}
+
+function validateCardNumber() {
+  const raw = document.getElementById('cardNumber').value.replace(/\s/g, '');
+  if (!raw) {
+    showError('cardNumber', 'Card number is required.'); return false;
+  }
+  if (!/^\d+$/.test(raw)) {
+    showError('cardNumber', 'Card number must contain digits only.'); return false;
+  }
+  if (raw.length !== 16) {
+    showError('cardNumber', 'Card number must be exactly 16 digits.'); return false;
+  }
+
+  clearError('cardNumber'); return true;
+}
+
+function validateExpiry() {
+  const val = document.getElementById('expiry').value.trim();
+  if (!val) {
+    showError('expiry', 'Expiry date is required.'); return false;
+  }
+  if (!/^\d{2}\/\d{2}$/.test(val)) {
+    showError('expiry', 'Use MM/YY format.'); return false;
+  }
+  const [mm, yy] = val.split('/').map(Number);
+  if (mm < 1 || mm > 12) {
+    showError('expiry', 'Month must be between 01 and 12.'); return false;
+  }
+  const now       = new Date();
+  const cardYear  = 2000 + yy;
+  const cardMonth = mm;
+  if (cardYear < now.getFullYear() || (cardYear === now.getFullYear() && cardMonth < now.getMonth() + 1)) {
+    showError('expiry', 'Card has expired.'); return false;
+  }
+  clearError('expiry'); return true;
+}
+
+function validateCVV() {
+  const val = document.getElementById('cvv').value.trim();
+  if (!val) {
+    showError('cvv', 'CVV is required.'); return false;
+  }
+  if (!/^\d{3}$/.test(val)) {
+    showError('cvv', 'CVV must be exactly 3 digits.'); return false;
+  }
+  clearError('cvv'); return true;
+}
+
+function validateTerms() {
+  const checked = document.getElementById('terms').checked;
+  const error   = document.getElementById('err-terms');
+  if (!checked) {
+    if (error) { error.innerHTML = '<i class="fa-solid fa-circle-exclamation"></i> You must agree to the terms to continue.'; error.classList.add('visible'); }
+    return false;
+  }
+  if (error) { error.textContent = ''; error.classList.remove('visible'); }
+  return true;
+}
+
+// ─────────────────────────────────────────────
+//  Live validation on blur
+// ─────────────────────────────────────────────
+document.getElementById('cardName').addEventListener('blur', validateName);
+document.getElementById('cardNumber').addEventListener('blur', validateCardNumber);
+document.getElementById('expiry').addEventListener('blur', validateExpiry);
+document.getElementById('cvv').addEventListener('blur', validateCVV);
+document.getElementById('terms').addEventListener('change', validateTerms);
+
+// Clear error as user starts retyping
+['cardName','cardNumber','expiry','cvv'].forEach(id => {
+  document.getElementById(id).addEventListener('input', function () {
+    const input = document.getElementById(id);
+    const error = document.getElementById('err-' + id);
+    if (input.classList.contains('invalid')) {
+      input.classList.remove('invalid','valid');
+      if (error) { error.textContent = ''; error.classList.remove('visible'); }
+    }
+  });
+});
+
+// ─────────────────────────────────────────────
+//  Input formatting
+// ─────────────────────────────────────────────
+document.getElementById('cardNumber').addEventListener('input', function () {
+  let val = this.value.replace(/\D/g, '').substring(0, 16);
+  this.value = val.replace(/(.{4})/g, '$1 ').trim();
+});
+
+document.getElementById('expiry').addEventListener('input', function () {
+  let val = this.value.replace(/\D/g, '').substring(0, 4);
+  if (val.length >= 3) val = val.slice(0, 2) + '/' + val.slice(2);
+  this.value = val;
+});
+
+document.getElementById('cvv').addEventListener('input', function () {
+  this.value = this.value.replace(/\D/g, '').substring(0, 3);
+});
+
+// ─────────────────────────────────────────────
+//  Promo code
+// ─────────────────────────────────────────────
+const PROMO_CODES = { 'SAVE10': 80.99, 'EDU20': 71.99 };
+
+document.getElementById('promo').addEventListener('blur', function () {
+  const code    = this.value.trim().toUpperCase();
+  const errEl   = document.getElementById('err-promo');
+  const subEl   = document.getElementById('subtotal');
+  const totalEl = document.getElementById('total');
+
+  if (!code) {
+    subEl.textContent   = '$89.99';
+    totalEl.textContent = '$89.99';
+    if (errEl) { errEl.textContent = ''; errEl.classList.remove('visible'); }
+    return;
+  }
+
+  if (PROMO_CODES[code]) {
+    const discounted = PROMO_CODES[code].toFixed(2);
+    subEl.textContent   = '$' + discounted;
+    totalEl.textContent = '$' + discounted;
+    if (errEl) {
+      errEl.style.color = 'var(--teal)';
+      errEl.innerHTML   = '<i class="fa-solid fa-circle-check"></i> Promo code applied!';
+      errEl.classList.add('visible');
+    }
+  } else {
+    subEl.textContent   = '$89.99';
+    totalEl.textContent = '$89.99';
+    if (errEl) {
+      errEl.style.color = 'var(--pink)';
+      errEl.innerHTML   = '<i class="fa-solid fa-circle-exclamation"></i> Invalid promo code.';
+      errEl.classList.add('visible');
+    }
+  }
+});
+
+// ─────────────────────────────────────────────
+//  Submit
+// ─────────────────────────────────────────────
+function handlePayment() {
+  const isValid = [
+    validateName(),
+    validateCardNumber(),
+    validateExpiry(),
+    validateCVV(),
+    validateTerms()
+  ].every(Boolean);
+
+  if (!isValid) return;
+
+  const btn = document.getElementById('confirmBtn');
+  btn.disabled = true;
+  btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Processing...';
+
+  setTimeout(() => {
+    btn.innerHTML        = '<i class="fa-solid fa-circle-check"></i> Payment Successful!';
+    btn.style.background = 'linear-gradient(135deg, #22c55e, #16a34a)';
+    btn.style.boxShadow  = '0 6px 24px rgba(34,197,94,0.4)';
+    clearAll();
+  }, 2000);
+}
