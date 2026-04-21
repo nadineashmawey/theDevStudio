@@ -64,7 +64,7 @@
                 
                 <textarea id="code-editor" spellcheck="false"></textarea>
 
-                <button class="start-btn">Start Challenge</button>
+               <button class="start-btn" id="startBtn">Start Challenge</button>
             </div>
 
         </div>
@@ -131,15 +131,15 @@
                     </div>
                 </div>
             </div>
-
-            
-           
-
         </div>
 
     </div>
 </div>
-
+<script>
+    document.getElementById('startBtn').addEventListener('click', () => {
+    window.location.href = '/public/pages/student/start-challenge.html';
+});
+</script>
 <script src="/public/js/challenge-description.js"></script>
 
 </body>

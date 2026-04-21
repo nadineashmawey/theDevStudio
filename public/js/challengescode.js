@@ -70,7 +70,7 @@ function render() {
       <p>${item.desc}</p>
       <div class="card-bottom">
         <span class="card-category">${item.category}</span>
-        <button class="btn-view">View Challenge</button>
+        <button class="btn-view" onclick="window.location.href='/public/pages/public/challenge-description.html?id=${item.id}'">View Challenge</button>
       </div>
     </div>
   `).join('');

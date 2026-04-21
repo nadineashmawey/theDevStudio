@@ -1,5 +1,18 @@
+:root {
+  --pink:       #FF40A0;
+  --pink-light: #FFB7E6;
+  --yellow:     #F0FE72;
+  --teal:       #60A3A6;
+  --bg:         #0A0E27;
+  --surface:    #1A203A;
+  --border:     rgba(255, 255, 255, 0.08);
+  --text-white: #FFFFFC;
+  --text-muted: #BDC2C9;
+  --text-body:  #C8D0E7;
+  --font:       'Inter', sans-serif;
+}
 .footer {
-  background-color: #0d1130;
+  background-color: var(--bg);
   padding: 3rem 3rem 0;
   font-family: 'Inter', sans-serif;
   display: flex;
@@ -20,7 +33,7 @@
   margin-bottom: 0rem;
 }
 .logo-icon {
-  background: linear-gradient(135deg, #fd48a7, #a78cc0);
+  background: linear-gradient(135deg, var(--pink), #a78cc0);
   border-radius: 50%;
   width: 42px;
   height: 42px;
@@ -30,7 +43,7 @@
   font-size: 1.2rem;
 }
 .logo-text {
-  color: white;
+  color: var(--text-white);
   font-size: 1.2rem;
   font-weight: 700;
    padding :20px;
@@ -38,12 +51,12 @@
 }
 
 .footer-desc {
-  color: #99A1AF;
+  color: var(--text-muted);
   font-size: 0.85rem;
   line-height: 1.7;
 }
 .footer-heading {
-  color: white;
+  color: var(--text-white);
   font-size: 1rem;
   font-weight: 700;
   margin-bottom: 1.5rem;
@@ -57,13 +70,13 @@
   gap: 0.9rem;
  
 }
-.footer-links li { color: #99A1AF; font-size: 0.88rem; }
+.footer-links li { color: var(--text-muted); font-size: 0.88rem; }
 .footer-links a {
-  color: #99A1AF;
+  color: var(--text-muted);
   text-decoration: none;
   transition: color 0.2s;
 }
-.footer-links a:hover { color: #fd48a7; }
+.footer-links a:hover { color: var(--pink); }
 .footer-bottom {
    
   text-align: center;
@@ -72,6 +85,41 @@
   width: 100%;
 
 }
-.footer-bottom p { color: #99A1AF; font-size: 0.85rem; 
+.footer-bottom p { color: var(--text-muted); font-size: 0.85rem; 
 text-align: center;
+}
+
+@media (max-width: 900px) {
+  .footer {
+    padding: 2.5rem 2rem 0;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1; 
+  }
+}
+
+
+@media (max-width: 560px) {
+  .footer {
+    padding: 2rem 1.2rem 0;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 1.8rem;
+  }
+
+  .footer-brand {
+    grid-column: auto;
+  }
+
+  .logo-text {
+    padding: 10px;
+  }
 }
