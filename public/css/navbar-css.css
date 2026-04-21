@@ -15,6 +15,9 @@
 /* =========================
    GUEST NAVBAR
 ========================= */
+body {
+  display: block !important;
+}
 .navbar {
   display: flex;
   align-items: center;
@@ -119,7 +122,12 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-
+  position: sticky;
+  top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-sizing: border-box;
   padding: 12px 32px;
   background: var(--bg);
   border-bottom: 1px solid var(--border);
@@ -162,6 +170,9 @@
   display: flex;
   align-items: center;
   gap: 14px;
+   color: var(--text-muted);
+    text-decoration: none;
+    font-size: 14px;
 }
 
 /* PROFILE */
