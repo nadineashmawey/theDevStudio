@@ -17,11 +17,11 @@ const testCases = [
   },
   {
     title: "Test Case 3",
-    status: "Passed",
+    status: "Failed",
     time: "10ms",
     input: "nums = [3,3], target = 6",
     expected: "[0,1]",
-    output: "[0,1]"
+    output: "[1,1]"
   },
   {
     title: "Test Case 4",
@@ -33,11 +33,11 @@ const testCases = [
   },
   {
     title: "Test Case 5",
-    status: "Passed",
+    status: "Failed",
     time: "11ms",
     input: "nums = [2,5,5,11], target = 10",
     expected: "[1,2]",
-    output: "[1,2]"
+    output: "[0,2]"
   }
 ];
 
@@ -45,17 +45,20 @@ const testList = document.getElementById("testList");
 
 function createTestCaseCard(test) {
   const card = document.createElement("div");
-  card.className = "test-card";
+  card.className = `test-card ${test.status.toLowerCase()}`;
+
+  const isPassed = test.status === "Passed";
+  const icon = isPassed ? "✓" : "✕";
 
   card.innerHTML = `
     <div class="test-top">
       <div class="test-title-wrap">
-        <div class="test-circle">✓</div>
+        <div class="test-circle ${isPassed ? "passed" : "failed"}">${icon}</div>
         <div class="test-title">${test.title}</div>
       </div>
 
       <div class="test-status-wrap">
-        <span class="test-status">${test.status}</span>
+        <span class="test-status ${isPassed ? "passed" : "failed"}">${test.status}</span>
         <span class="test-time">${test.time}</span>
       </div>
     </div>
@@ -74,7 +77,7 @@ function createTestCaseCard(test) {
 
         <div class="test-field">
           <label>Your Output:</label>
-          <div class="code-box">${test.output}</div>
+          <div class="code-box ${isPassed ? "" : "wrong-output"}">${test.output}</div>
         </div>
       </div>
     </div>
@@ -85,7 +88,8 @@ function createTestCaseCard(test) {
 
 testCases.forEach((test) => {
   testList.appendChild(createTestCaseCard(test));
-}); 
+});
+
 const retryBtn = document.querySelector(".btn-outline");
 const nextBtn = document.querySelector(".btn-pink");
 
