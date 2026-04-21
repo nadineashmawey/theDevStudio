@@ -1,4 +1,4 @@
-  
+
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
@@ -54,15 +54,9 @@
     .learn-title {
       font-weight: 700;
       font-size: 20px;
-      margin-bottom: 24px;
+      margin-bottom: 20px;
       margin-top: 0;
       color: var(--text-white);
-    }
-
-    .learn-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
     }
 
     .lessons {
@@ -73,9 +67,8 @@
       margin-bottom: 10px;
       text-align: left;
     }
-    .lessons span { color: var(--pink); }
 
-    .form-group { margin-bottom: 0; }
+    .form-group { margin-bottom: 16px; }
 
     .form-input {
       width: 100%;
@@ -144,35 +137,62 @@
     .step-line.done { background: var(--pink); }
     .step-line.pending { background: var(--border); }
 
-    /* ── COURSE PREVIEW CARD ── */
-    .preview-card {
+    /* ── ADD OUTCOME BUTTON ── */
+    .btn-add {
+      width: 100%;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 18px;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text-muted);
+      font-family: var(--font);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: border-color 0.2s, color 0.2s;
+      margin-top: 8px;
+    }
+    .btn-add:hover {
+      border-color: var(--teal);
+      color: var(--teal);
+    }
+    .btn-add i { font-size: 14px; }
+
+    /* ── SECTION CARD ── */
+    .section-card {
       background: var(--bg);
       border-radius: 12px;
       border: 1px solid var(--border);
-      padding: 24px;
-      margin-top: 24px;
+      padding: 20px;
+      margin-bottom: 12px;
     }
 
-    .preview-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 12px 0;
-      border-bottom: 1px solid var(--border);
+    /* ── ADD SECTION BUTTON ── */
+    .btn-add-section {
+      width: 100%;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px 18px;
       font-size: 15px;
-    }
-    .preview-row:last-child { border-bottom: none; }
-
-    .preview-row .preview-label {
+      font-weight: 600;
       color: var(--text-muted);
+      font-family: var(--font);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: border-color 0.2s, color 0.2s;
+      margin-top: 4px;
     }
-    .preview-row .preview-value {
-      color: var(--text-white);
-      font-weight: 500;
-    }
-    .preview-row .preview-value.pink {
+    .btn-add-section:hover {
+      border-color: var(--pink);
       color: var(--pink);
-      font-weight: 700;
     }
 
     /* ── BOTTOM BUTTONS ── */
@@ -197,24 +217,42 @@
     }
     .btn-back:hover { border-color: var(--text-muted); }
 
-    .btn-publish {
-      background: linear-gradient(90deg, var(--teal), var(--yellow));
+    .btn-enroll {
+      background: linear-gradient(90deg, var(--pink), var(--pink-light));
       border: none;
       border-radius: 12px;
       padding: 18px;
       font-size: 16px;
       font-weight: 700;
-      color: var(--bg);
+      color: white;
       font-family: var(--font);
       cursor: pointer;
       transition: opacity 0.2s, transform 0.15s;
     }
-    .btn-publish:hover { opacity: 0.9; transform: translateY(-1px); }
-    .btn-publish:active { transform: translateY(0); }
+    .btn-enroll:hover { opacity: 0.9; transform: translateY(-1px); }
+
+    /* ── OUTCOME ITEM ── */
+    .outcome-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    .outcome-item .form-input { margin: 0; }
+    .btn-remove {
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      cursor: pointer;
+      font-size: 16px;
+      flex-shrink: 0;
+      transition: color 0.2s;
+    }
+    .btn-remove:hover { color: var(--pink); }
 
     @media (max-width: 640px) {
       .page-wrapper { padding: 40px 20px 60px; }
       .learn-box { padding: 20px; }
-      .learn-grid { grid-template-columns: 1fr; }
       .btn-row { grid-template-columns: 1fr; }
     }
+ 
