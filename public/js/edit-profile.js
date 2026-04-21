@@ -1,12 +1,89 @@
-async function loadEditProfile(userData) {
-    const response = await fetch('/components/editProfile.html');
-    const html = await response.text();
-    document.getElementById('edit-profile-container').innerHTML = html;
 
-    document.getElementById('fullname').value  = userData.name;
-    document.getElementById('username').value   = userData.username;
-    document.getElementById('email').value      = userData.email;
-    document.getElementById('bio').value        = userData.bio;
-    document.getElementById('location').value   = userData.location;
-    document.getElementById('selected-img').src = userData.avatar;
+function initAvatarSelection() {
+    const avatars = document.querySelectorAll('.grid-avatars img');
+    const selectedImg = document.getElementById('selected-img');
+    if (!avatars.length || !selectedImg) return;
+
+    avatars.forEach(avatar => {
+        avatar.addEventListener('click', () => {
+            avatars.forEach(a => a.classList.remove('active'));
+            avatar.classList.add('active');
+            selectedImg.src = avatar.src;
+            selectedImg.alt = avatar.alt;
+        });
+    });
+
+    avatars[0].classList.add('active');
 }
+
+
+function showError(inputId, message) {
+    const input = document.getElementById(inputId);
+    if (!input) return;
+    input.classList.add('input-error');
+    const span = input.closest('.field-group').querySelector('.error-msg');
+    if (span) span.textContent = message;
+}
+
+function clearErrors() {
+    document.querySelectorAll('.input-error').forEach(el => el.classList.remove('input-error'));
+    document.querySelectorAll('.error-msg').forEach(span => span.textContent = '');
+}
+
+
+function validatePasswords() {
+    const current = document.getElementById('currentpass').value.trim();
+    const newPass  = document.getElementById('newpass').value.trim();
+    const confirm  = document.getElementById('confirmpass').value.trim();
+
+    clearErrors();
+
+    if (!current && !newPass && !confirm) return true;
+
+    let valid = true;
+
+    if (!current) {
+        showError('currentpass', 'Please enter your current password.');
+        valid = false;
+    }
+
+    if (!newPass) {
+        showError('newpass', 'Please enter a new password.');
+        valid = false;
+    } else if (newPass.length < 8) {
+        showError('newpass', 'Password must be at least 8 characters.');
+        valid = false;
+    } else if (current && current === newPass) {
+        showError('newpass', 'New password must differ from current password.');
+        valid = false;
+    }
+
+    if (!confirm) {
+        showError('confirmpass', 'Please confirm your new password.');
+        valid = false;
+    } else if (newPass && confirm !== newPass) {
+        showError('confirmpass', 'Passwords do not match.');
+        valid = false;
+    }
+
+    return valid;
+}
+
+
+function initSaveButton() {
+    const saveBtn = document.querySelector('.save-bttn');
+    if (!saveBtn) return;
+
+    saveBtn.removeAttribute('onclick');
+    saveBtn.addEventListener('click', () => {
+        if (validatePasswords()) {
+            window.location.href = '/public/pages/admin/profile.html';
+        }
+    });
+}
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    initAvatarSelection();
+    initSaveButton();
+});
