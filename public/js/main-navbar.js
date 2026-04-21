@@ -82,18 +82,23 @@ function createUserNavbar() {
   nav.className = "top-navbar";
 
   nav.innerHTML = `
-    <div class="nav-left" onclick="goHome()">
-      <span class="logo-text">EduPlatform</span>
-    </div>
+  <button class="nav-left" onclick="goHome()" style="cursor:pointer;">
+  <div class="nav-logo-icon">
+    <i class="fa-solid fa-graduation-cap"></i>
+  </div>
+  <span class="logo-text">EduPlatform</span>
+</button>
+    
+    
 
     <div class="nav-center">
       <a onclick="goCourses()">Courses</a>
       <a onclick="goDashboard()">Dashboard</a>
+       <a onclick="goProfile()">Profile</a>
     </div>
 
-    <div class="nav-right">
-      <a onclick="goProfile()">Profile</a>
-      <a onclick="logout()">Logout</a>
+    <div class="nav-actions">
+      <button class="btn-signup" onclick="logout()">Logout</button>
     </div>
   `;
 

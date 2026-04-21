@@ -45,15 +45,19 @@ signinForm.addEventListener("submit", (e) => {
     redirectUser();
   }, 50);
 });
-localStorage.setItem("role", "student");
+
+
 function redirectUser() {
-  if (selectedRole === "Student") {
+    const role = selectedRole.toLowerCase();
+
+  localStorage.setItem("role", role);
+  if (selectedRole === "student") {
     window.location.href = "/../../../public/pages/student/dashboard.html";
   } 
-  else if (selectedRole === "Instructor") {
+  else if (selectedRole === "instructor") {
     window.location.href = "/../../../public/pages/instructor/dashboard.html";
   } 
-  else if (selectedRole === "Admin") {
+  else if (selectedRole === "admin") {
     window.location.href = "/../../../public/pages/admin/dashboard.html";
   } 
   else {
