@@ -346,3 +346,16 @@ textarea:focus {
 .cancel-bttn:hover {
     background-color: var(--surface);
 }
+.error-msg {
+    color: #ff4d4d;
+    font-size: 12px;
+    margin-top: 4px;
+    font-family: var(--font);
+    min-height: 16px;
+    display: block;
+}
+
+.input-error {
+    border-color: #ff4d4d !important;
+    box-shadow: 0 0 8px rgba(255, 77, 77, 0.4) !important;
+}
