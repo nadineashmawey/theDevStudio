@@ -36,7 +36,7 @@
     </div>
 </div>
 <hr class="horizontal-strip">
-<img class="preview-image" src="e:\victory tech\Pictures\Capture.JPG" alt="Course-Prevview">
+<img class="preview-image" src="../../../images/all-courses-1.jpg" alt="Course-Prevview">
 
 <div class="learn-box">
     <h3 class="learn-title">What you'll learn</h3>
@@ -146,9 +146,7 @@
         <div class="pricing-top">
           <div class="price">$49.99</div>
           <div class="price-note">One-time payment • Full lifetime access</div>
-          <a href="signup.html">
-  <button class="btn-enroll">Sign Up to Enroll</button>
-</a>
+          <button class="btn-enroll" id="enrollBtn">Enroll</button>
         </div>
         <hr class="pricing-divider">
         <div class="pricing-features">
@@ -179,6 +177,22 @@
 
 
 </div>
+<script>
+  
+  document.getElementById('enrollBtn').addEventListener('click', () => {
 
+   
+    const isLoggedIn = localStorage.getItem('isLoggedIn');
+
+    if (isLoggedIn === 'true') {
+     
+      window.location.href = "../student/course-payment.html";
+    } else {
+    
+      window.location.href = "signup.html";
+    }
+
+  });
+</script>
    </body>
 </html>

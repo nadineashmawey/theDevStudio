@@ -1,61 +1,66 @@
-// ===== GET ROLE =====
+// ================= ROLE =================
 function getRole() {
-  return localStorage.getItem("role"); 
-  // "instructor", "student", "admin", or null
+  return localStorage.getItem("role");
 }
 
-// ===== COURSES =====
-function goCourses() {
-  window.location.href = "../../../public/pages/public/all-courses.html";
-}
+// ================= NAVIGATION =================
+function goHome()       { window.location.href = "/index.html"; }
+function goCourses()    { window.location.href = "/public/pages/public/all-courses.html"; }
+function goChallenges() { window.location.href = "/public/pages/public/coding-challenges.html"; }
 
-// ===== CHALLENGES =====
-function goChallenges() {
-  window.location.href = "../pages/public/coding-challenges.html";
-}
-
-// ===== DASHBOARD =====
 function goDashboard() {
-  const role = getRole();
-
-  if (role === "instructor") {
-    window.location.href = "../pages/instructor/dashboard.html";
-  } 
-  else if (role === "student") {
-    window.location.href = "../pages/student/dashboard.html";
-  } 
-  else if (role === "admin") {
-    window.location.href = "../pages/admin/dashboard.html";
-  } 
-  else {
-    // not logged in
-    window.location.href = "../pages/login.html";
-  }
+  const routes = {
+    instructor: "/public/pages/instructor/dashboard.html",
+    student:    "/public/pages/student/dashboard.html",
+    admin:      "/public/pages/admin/dashboard.html"
+  };
+  window.location.href = routes[getRole()] || "/public/pages/public/login.html";
 }
 
-// ===== PROFILE =====
 function goProfile() {
-  const role = getRole();
-
-  if (role === "instructor") {
-    window.location.href = "../pages/instructor/profile.html";
-  } 
-  else if (role === "student") {
-    window.location.href = "../pages/student/profile.html";
-  } 
-  else if (role === "admin") {
-    window.location.href = "../pages/admin/profile.html";
-  } 
-  else {
-    window.location.href = "../pages/login.html";
-  }
+  const routes = {
+    instructor: "/public/pages/instructor/profile.html",
+    student:    "/public/pages/student/profile.html",
+    admin:      "/public/pages/admin/profile.html"
+  };
+  window.location.href = routes[getRole()] || "/public/pages/public/login.html";
 }
 
-// ===== LOGOUT =====
 function logout() {
   localStorage.removeItem("role");
-  window.location.href = "../index.html";
-}
-function goHome() {
   window.location.href = "/index.html";
 }
+
+// ================= NAVBAR =================
+function createNavbar() {
+  const nav = document.createElement("nav");
+  nav.className = "top-navbar";
+  nav.innerHTML = `
+    <div class="nav-left" onclick="goHome()">
+      <div class="logo-icon">
+        <i class="fa-solid fa-graduation-cap"></i>
+      </div>
+      <span class="logo-text">EduPlatform</span>
+    </div>
+    <div class="nav-center">
+      <a onclick="goCourses()">Courses</a>
+      <a onclick="goChallenges()">Challenges</a>
+      <a onclick="goDashboard()">Dashboard</a>
+    </div>
+    <div class="nav-right">
+      <div class="profile-pill" onclick="goProfile()">
+        <div class="avatar">
+          <i class="fa-solid fa-user"></i>
+        </div>
+        <span id="nav-profile-name">Alex Johnson</span>
+      </div>
+      <div class="logout-icon" onclick="logout()">
+        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+      </div>
+    </div>
+  `;
+  document.body.insertBefore(nav, document.body.firstChild);
+}
+
+// ================= INIT =================
+document.addEventListener("DOMContentLoaded", createNavbar);

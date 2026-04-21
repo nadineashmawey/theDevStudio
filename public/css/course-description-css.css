@@ -1,121 +1,125 @@
-
-
-
 :root {
   --pink:       #FF40A0;
   --pink-light: #FFB7E6;
   --yellow:     #F0FE72;
   --teal:       #60A3A6;
   --bg:         #0A0E27;
-  --surface:    #1d2354; /* your card color */
+  --surface:    #1A203A;
   --border:     rgba(255, 255, 255, 0.08);
   --text-white: #FFFFFC;
   --text-muted: #8b92a9;
   --text-body:  rgba(255, 255, 255, 0.86);
   --font:       'Inter', sans-serif;
 }
-body{
-    background-color: var(--bg);
-    color: var(--text-white);
-    font-family: var(--font);
-    margin:0;
+
+/* ── BASE ── */
+body {
+  background-color: var(--bg);
+  color: var(--text-white);
+  font-family: var(--font);
+  margin: 0;
 }
 
-/* LAYOUT */
+/* ── LAYOUT ── */
 .page-wrapper {
   display: flex;
   align-items: flex-start;
-  min-height: 100vh;
-  width: 100%;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 48px;
 }
 
 .left-col {
-  flex: 1;              
-  padding: 24px 48px;
+  flex: 1;
+  min-width: 0;
 }
 
 .sidebar {
   width: 320px;
+  flex-shrink: 0;
   position: sticky;
-  top: 40px;
-  height: fit-content;
-  margin-right: 20px;
+  top: 24px;
 }
 
-/* BADGES */
-.badges{
-    display: flex;
-    margin-bottom:20px;
-    gap:10px;
+/* ── BADGES ── */
+.badges {
+  display: flex;
+  margin-bottom: 20px;
+  gap: 10px;
 }
 
-.badge{
-    font-size:13px;
-    padding:5px 14px;
-    border-radius:20px;
-    border: 1.5px solid;
+.badge {
+  font-size: 13px;
+  padding: 5px 14px;
+  border-radius: 20px;
+  border: 1.5px solid;
+  background: transparent;
 }
 
-.badge-frosted-blue{
-    color: #baeeff;
-    border-color: #627d86;
-    background: #627d86;
+.badge-frosted-blue {
+  color: var(--teal);
+  border-color: var(--teal);
 }
 
-.badge-Dragonfruit{
-    color: var(--pink);
-    border-color:#aa1d66;
-    background:#aa1d66;
+.badge-Dragonfruit {
+  color: var(--pink);
+  border-color: var(--pink);
+  background: rgba(255, 64, 160, 0.1);
 }
 
-/* TEXT */
-.course-title{
-    font-size: 38px;
-    font-weight:800;
-    margin-bottom: 16px;
+/* ── TYPOGRAPHY ── */
+.course-title {
+  font-size: 38px;
+  font-weight: 800;
+  margin-bottom: 16px;
+  color: var(--text-white);
+  line-height: 1.2;
 }
 
-.course-decription{
-    font-size:16px;
-    margin-bottom:24px;
-    line-height: 1.7;
+.course-decription {
+  font-size: 16px;
+  margin-bottom: 24px;
+  line-height: 1.7;
+  color: var(--text-muted);
 }
 
-/* FLEX GROUP (reused) */
-.meta-row,
-.rating,
-.meta-item,
-.Instructor,
-.learn-lesson,
-.feature-item {
-    display:flex;
-    align-items:center;
-    gap:6px;
+/* ── META ROW ── */
+.meta-row {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
 }
 
-/* META */
-.meta-row{
-    gap:28px;
-    margin-bottom: 28px;
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+  color: var(--text-white);
 }
 
-.rating{
-    font-weight:600;
+.rating-count {
+  color: var(--text-muted);
+  font-weight: 400;
 }
 
-.rating-count,
-.meta-item,
-.title,
-.feature-sub,
-.price-note,
-.lessons {
-    color: var(--text-muted);
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-muted);
+  font-size: 14px;
 }
 
-/* INSTRUCTOR */
-.Instructor{
-    gap:12px;
-    margin-bottom: 36px;
+/* ── INSTRUCTOR ── */
+.Instructor {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 36px;
 }
 
 .avatar {
@@ -123,6 +127,12 @@ body{
   height: 44px;
   border-radius: 50%;
   overflow: hidden;
+  flex-shrink: 0;
+  background: #c97b4b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
 }
 
 .avatar img {
@@ -132,162 +142,239 @@ body{
   display: block;
 }
 
-.title{
-    font-size:12px;
+.title {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-bottom: 2px;
 }
 
-.Instructor-Name{
-    font-weight: 700;
-    font-size: 16px;
+.Instructor-Name {
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--text-white);
 }
 
-/* IMAGE */
-.preview-image{
-    width:100%;
-    border-radius: 12px;
-    margin-bottom: 32px;
-    object-fit: cover;
+/* ── PREVIEW IMAGE ── */
+.preview-image {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 32px;
+  object-fit: cover;
+  display: block;
 }
 
-/* DIVIDER */
-.horizontal-strip{
-    border: none;
-    border-top: 1px solid var(--border);
-    margin-bottom: 32px;
+/* ── DIVIDER ── */
+.horizontal-strip {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin-bottom: 32px;
 }
 
-/* BOX */
-.learn-box{
-   border-radius:20px;
-   background-color:var(--surface);
-   border: 1px solid var(--border);
-   margin-bottom:40px;
-   padding: 20px 30px;
+/* ── CARD BOX ── */
+.learn-box {
+  border-radius: 12px;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  margin-bottom: 32px;
+  padding: 24px 28px;
 }
 
-.learn-title{
-    font-weight: 700;
-    font-size: 22px;
-    margin-bottom: 20px;
+.learn-title {
+  font-weight: 700;
+  font-size: 20px;
+  margin-bottom: 20px;
+  margin-top: 0;
+  color: var(--text-white);
 }
 
-/* GRID */
-.learn-grid{
-    display:grid;
-    grid-template-columns: 1fr 1fr;
-    gap:16px;
+/* ── LEARN GRID ── */
+.learn-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px 32px;
 }
 
-.learn-item{
-    color: var(--text-body);
-    font-size: 14px;
-    line-height: 1.5;
-    display:flex;
-    gap: 10px;
+.learn-item {
+  color: var(--text-body);
+  font-size: 14px;
+  line-height: 1.6;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
 }
 
-.check{
-    color: var(--teal);
+.check {
+  color: var(--teal);
+  font-size: 16px;
+  flex-shrink: 0;
+  margin-top: 2px;
 }
 
-/* CURRICULUM */
-.learn-box-line1{
-    display:flex;
-    justify-content: space-between;
-    margin: 5px 0;
+/* ── CURRICULUM SECTION TITLE ── */
+.section-heading {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: var(--text-white);
 }
 
-.course-c-title{
-    margin:10px;
-    font-weight: 700;
-    font-size:16px;
+/* ── CURRICULUM CARD ── */
+.learn-box-line1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 0 12px;
 }
 
-.learn-list{
-    padding-top: 14px;
-    border-top: 1px solid var(--border);
-    margin: 0 -30px;
-    padding-left: 30px;
-    padding-right: 30px;
+.course-c-title {
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--text-white);
 }
 
-.learn-lesson{
-    margin-bottom: 14px;
-    color: var(--text-body);
+.lessons {
+  font-size: 13px;
+  color: var(--text-muted);
 }
 
-.play-button{
-    width:22px;
-    font-size: 18px;
-    color: var(--pink);
+.learn-list {
+  border-top: 1px solid var(--border);
+  padding-top: 16px;
+  margin: 0 -28px;
+  padding-left: 28px;
+  padding-right: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
 }
 
-/* SIDEBAR */
-.pricing-card{
+.learn-lesson {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--text-body);
+  font-size: 14px;
+}
+
+.play-button {
+  font-size: 16px;
+  color: var(--pink);
+  flex-shrink: 0;
+}
+
+/* ── REVIEWS ── */
+.learn-box-line1 .review-rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-white);
+}
+
+/* ── SIDEBAR PRICING CARD ── */
+.pricing-card {
   background-color: var(--surface);
   border-radius: 16px;
   border: 1px solid var(--border);
-  margin-top: 15px;
+  overflow: hidden;
 }
 
-.pricing-top{
-  padding: 28px;
+.pricing-top {
+  padding: 28px 28px 0;
 }
 
-.price{
+.price {
   font-size: 40px;
   font-weight: 800;
   color: var(--pink);
+  margin-bottom: 6px;
 }
 
-.price-note{
+.price-note {
   font-size: 13px;
+  color: var(--text-muted);
   margin-bottom: 24px;
+  line-height: 1.5;
 }
 
-/* BUTTON */
-.btn-enroll{
+.pricing-divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 0;
+}
+
+/* ── ENROLL BUTTON ── */
+.btn-enroll {
+  display: block;
   width: 100%;
   background: linear-gradient(90deg, var(--pink), var(--pink-light));
-  color: white;
+  color: var(--text-white);
   font-size: 15px;
   font-weight: 700;
   padding: 15px;
   border-radius: 24px;
   border: none;
   cursor: pointer;
-  box-shadow: 0 0 20px rgba(255,64,160,0.4);
+  font-family: var(--font);
+  margin-bottom: 28px;
+  box-shadow: 0 0 20px rgba(255, 64, 160, 0.35);
+  transition: opacity 0.2s, transform 0.15s;
+}
+.btn-enroll:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
 }
 
-/* FEATURES */
-.pricing-features{
-  padding: 24px 28px;
+/* ── PRICING FEATURES ── */
+.pricing-features {
+  padding: 20px 28px 28px;
   display: flex;
   flex-direction: column;
   gap: 18px;
 }
 
-.feature-icon{
-  width: 38px;
-  height: 38px;
-  border-radius: 15px;
-  background: rgba(255,255,255,0.08);
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.feature-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 16px;
+  flex-shrink: 0;
 }
-/* FEATURE ICON COLORS */
+
 .icon-clock {
-  background: rgba(255, 64, 160, 0.12); /* pink */
+  background: rgba(255, 64, 160, 0.15);
   color: var(--pink);
 }
 
 .icon-level {
-  background: rgba(96, 163, 166, 0.12); /* teal */
+  background: rgba(96, 163, 166, 0.15);
   color: var(--teal);
 }
 
 .icon-book {
-  background: rgba(240, 254, 114, 0.12); /* yellow */
+  background: rgba(240, 254, 114, 0.15);
   color: var(--yellow);
+}
+
+.feature-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-white);
+  line-height: 1.2;
+}
+
+.feature-sub {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 2px;
 }
