@@ -231,7 +231,7 @@ body {
 
 .course-card:hover .card-image { transform: scale(1.04); }
 
-.badge,
+.card-badge,
 .badge-beginner,
 .badge-intermediate,
 .badge-advanced {
