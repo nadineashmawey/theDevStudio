@@ -19,10 +19,13 @@ body {
   color: var(--text-white);
   font-family: var(--font);
   min-height: 100vh;
+  display: block; /* ← change grid to block */
+}
+.signup-layout {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
 }
-
 /* ── LEFT PANEL ── */
 .left-panel {
   background: #080b1f;
