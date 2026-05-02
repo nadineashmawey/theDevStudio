@@ -99,7 +99,7 @@
       const routes = {
         student:    "../../pages/student/dashboard.html",
         instructor: "../../pages/instructor/dashboard.html",
-        admin:      "../../pages/admin/dashboard.html"
+       
       };
       window.location.href = routes[selectedRole];
     });
